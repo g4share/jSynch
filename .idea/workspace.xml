@@ -12,6 +12,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/jSynch$ConfigStorageTest_and_3_more.ic" NAME="ConfigStorageTest and 3 more Coverage Results" MODIFIED="1330886988566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/jSynch$XmlFileReaderTest.ic" NAME="XmlFileReaderTest Coverage Results" MODIFIED="1330886962227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$XmlConfigReaderTest.ic" NAME="XmlConfigReaderTest Coverage Results" MODIFIED="1330873443376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$FileLoggerTest.ic" NAME="FileLoggerTest Coverage Results" MODIFIED="1330873437230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$ConfigStorageTest.ic" NAME="ConfigStorageTest Coverage Results" MODIFIED="1330873428959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -134,97 +136,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ConfigStorage.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStorage.java">
+      <file leaf-file-name="FileLoggerTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/tests/FileLoggerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
+            <state line="45" column="48" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigStorageTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="XmlFileReaderTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="112" column="58" selection-start="3590" selection-end="3590" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XmlNode.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="12" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XmlConfigReaderTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/tests/XmlConfigReaderTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="94" column="0" selection-start="2927" selection-end="2982" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XmlFileReader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlFileReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="108" column="51" selection-start="3523" selection-end="3555" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XmlReader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="4" selection-start="222" selection-end="237" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XmlConfigReader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="47" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StoreManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/StoreManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="17" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigStorageTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="0" selection-start="5485" selection-end="5485" vertical-scroll-proportion="0.0">
+            <state line="96" column="0" selection-start="2840" selection-end="2840" vertical-scroll-proportion="0.18922305">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FrameworkMethod.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <file leaf-file-name="ConfigReader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="28" selection-start="511" selection-end="511" vertical-scroll-proportion="-5.88">
-              <folding>
-                <element signature="e#0#1777#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InvokeMethod.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="16" selection-start="492" selection-end="492" vertical-scroll-proportion="-6.8">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RunBefores.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/statements/RunBefores.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="16" selection-start="619" selection-end="619" vertical-scroll-proportion="-7.48">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReflectiveCallable.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="40" selection-start="397" selection-end="397" vertical-scroll-proportion="-6.8">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParentRunner.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/ParentRunner.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="16" selection-start="2839" selection-end="2839" vertical-scroll-proportion="-5.88">
-              <folding>
-                <element signature="e#0#3733#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JUnitCore.class" pinned="false" current="true" current-in-tab="true">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runner/JUnitCore.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="35" selection-start="1439" selection-end="1439" vertical-scroll-proportion="0.9610137">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlockJUnit4ClassRunner.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding>
-                <element signature="e#0#4931#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Is.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/hamcrest-all-1.1.jar!/org/hamcrest/core/Is.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="0" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.0">
+            <state line="8" column="17" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -245,22 +243,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/fSynch/tests/FileLoggerTest.java" />
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlNode.java" />
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/ConfigInfo.java" />
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/StoreManager.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigReader.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/jSynchConfigStore.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStoreJSynch.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlReader.java" />
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlFileReader.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/Constants.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointInfo.java" />
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStore.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java" />
+        <option value="$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlNodeDefinitionImpl.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlNodeDefinition.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlNode.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStore.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStorage.java" />
         <option value="$PROJECT_DIR$/fSynch/tests/XmlConfigReaderTest.java" />
-        <option value="$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlFileReader.java" />
+        <option value="$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java" />
       </list>
     </option>
   </component>
@@ -579,33 +577,14 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.g4share.jSynch.config" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.g4share.jSynch.config" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.XmlConfigReaderTest and 2 more">
-    <configuration default="false" name="FileLoggerTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="fSynch" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FileLoggerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Cover" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Cover" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.ConfigStorageTest and 3 more">
     <configuration default="false" name="XmlConfigReaderTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="fSynch" />
@@ -689,6 +668,63 @@
       </patterns>
       <RunnerSettings RunnerId="Cover" />
       <ConfigurationWrapper RunnerId="Cover" />
+      <method />
+    </configuration>
+    <configuration default="false" name="XmlFileReaderTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="fSynch" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlFileReaderTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Cover" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ConfigStorageTest and 3 more" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="fSynch" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns>
+        <pattern testClass="ConfigStorageTest" />
+        <pattern testClass="FileLoggerTest" />
+        <pattern testClass="XmlConfigReaderTest" />
+        <pattern testClass="XmlFileReaderTest" />
+      </patterns>
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -819,11 +855,12 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.FileLoggerTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.XmlConfigReaderTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ConfigStorageTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.XmlConfigReaderTest and 2 more" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.XmlConfigReaderTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ConfigStorageTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.XmlConfigReaderTest and 2 more" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.XmlFileReaderTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ConfigStorageTest and 3 more" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -840,13 +877,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.05299539" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39631337" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -854,13 +891,13 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32965687" sideWeight="0.671659" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.328341" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -923,120 +960,116 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/Constants.java">
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/FileLogger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
+        <state line="54" column="0" selection-start="1054" selection-end="1525" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/ConfigInfo.java">
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/FileLoggerFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
+        <state line="8" column="17" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/FileLoggerProperties.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_02/src.zip!/java/io/FileWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="21" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="39" selection-start="638" selection-end="639" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/hamcrest-all-1.1.jar!/org/hamcrest/BaseMatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/hamcrest-all-1.1.jar!/org/hamcrest/core/IsEqual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="0" selection-start="1830" selection-end="1830" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/hamcrest-all-1.1.jar!/org/hamcrest/core/Is.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.0">
+        <state line="76" column="11" selection-start="2295" selection-end="2295" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
+        <state line="70" column="0" selection-start="1717" selection-end="2119" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="17" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="17" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="47" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jSynch/jSynch.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/StoreManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="17" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/tests/XmlConfigReaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="0" selection-start="2927" selection-end="2982" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/tests/FileLoggerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="48" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlFileReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="51" selection-start="3523" selection-end="3555" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="12" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="4" selection-start="222" selection-end="237" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="58" selection-start="3590" selection-end="3590" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="0" selection-start="5485" selection-end="5485" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="397" selection-end="397" vertical-scroll-proportion="-6.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/model/FrameworkMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="28" selection-start="511" selection-end="511" vertical-scroll-proportion="-5.88">
-          <folding>
-            <element signature="e#0#1777#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="16" selection-start="492" selection-end="492" vertical-scroll-proportion="-6.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/statements/RunBefores.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="16" selection-start="619" selection-end="619" vertical-scroll-proportion="-7.48">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding>
-            <element signature="e#0#4931#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="16" selection-start="2839" selection-end="2839" vertical-scroll-proportion="-5.88">
-          <folding>
-            <element signature="e#0#3733#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runner/JUnitCore.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="35" selection-start="1439" selection-end="1439" vertical-scroll-proportion="0.9610137">
+        <state line="96" column="0" selection-start="2840" selection-end="2840" vertical-scroll-proportion="0.18922305">
           <folding />
         </state>
       </provider>

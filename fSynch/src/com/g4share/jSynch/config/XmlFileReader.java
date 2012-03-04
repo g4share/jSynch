@@ -41,7 +41,7 @@ public class XmlFileReader implements XmlReader{
         //open file
         File confFile = new File(configFileName);
         if(!confFile.exists()){
-            store.ErrorOccured("config file \"" + configFileName + "\" does not exists.");
+            store.ErrorOccurred("config file \"" + configFileName + "\" does not exists.");
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 
@@ -51,7 +51,7 @@ public class XmlFileReader implements XmlReader{
         try {
             saxParser = factory.newSAXParser();
         } catch (ParserConfigurationException | SAXException ex) {
-            store.ErrorOccured("config cannot be opened.");
+            store.ErrorOccurred("config cannot be opened.");
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 
@@ -105,7 +105,7 @@ public class XmlFileReader implements XmlReader{
         try {
             saxParser.parse(configFileName, handler);
         } catch (SAXException | IOException ex) {
-            store.ErrorOccured("error read config: possible wrong format.");
+            store.ErrorOccurred("error read config: possible wrong format.");
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 

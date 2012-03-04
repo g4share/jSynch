@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <interval seconds = "10"/>
+
+	<!--linux version-->
+<!--
+    <SynchronisedPaths>
+        <path name = "sh1" value = "/media/gmShared/synch1/"/>
+        <path name = "sh1" value = "/media/gmShared/synch2/"/>
+        <path name = "sh1" value = "/media/gmShared/synch3/"/>
+        
+        <path name = "sh2" value = "/media/gmShared/synch4/"/>
+        <path name = "sh2" value = "/media/gmShared/synch5/"/>
+    </SynchronisedPaths>
+-->	
+	<!--windows version-->
+
+    <SynchronisedPaths>
+<!--
+        <path name = "sh1" value = "e:\synch1\"/>
+        <path name = "sh1" value = "e:\synch2\"/>
+        <path name = "sh1" value = "e:\synch3\"/>
+-->        
+        <path name = "sh2" value = "e:\synch4\"/>
+        <path name = "sh2" value = "e:\synch5\"/>
+    </SynchronisedPaths>
+	
+</root>

@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public interface ConfigStore {
     void AddNode(XmlNode node, Map<String, String> attributes);
-    void ErrorOccured(String hint);
+    void ErrorOccurred(String hint);
 
     int getInterval();
     Set<PointInfo> getPoints();

@@ -22,8 +22,8 @@ import static org.junit.Assert.assertThat;
  */
 public class XmlConfigReaderTest {
     Logger logger;
-    String fatalMesage;
-    String errorMesage;
+    String fatalMessage;
+    String errorMessage;
 
     @Before
     public void setUp() throws Exception {
@@ -33,15 +33,15 @@ public class XmlConfigReaderTest {
 
             @Override
             public void logError(String exception) {
-                errorMesage = exception;
+                errorMessage = exception;
             }
 
             @Override
             public void logFatal(String exception) {
-                fatalMesage = exception;
+                fatalMessage = exception;
             }};
 
-        fatalMesage = null;
+        fatalMessage = null;
     }
 
     @Test
@@ -58,7 +58,7 @@ public class XmlConfigReaderTest {
 
         ConfigInfo cInfo = configReader.read(null);
         assertThat(cInfo, nullValue());
-        assertThat(fatalMesage, containsString("interval"));
+        assertThat(fatalMessage, containsString("interval"));
     }
 
     @Test
@@ -87,8 +87,8 @@ public class XmlConfigReaderTest {
         ConfigInfo cInfo = configReader.read(null);
         assertThat(cInfo, nullValue());
 
-        assertThat(errorMesage, containsString("at least 2 points"));
-        assertThat(fatalMesage, containsString("There are no points"));
+        assertThat(errorMessage, containsString("at least 2 points"));
+        assertThat(fatalMessage, containsString("There are no points"));
     }
 
 
@@ -123,8 +123,8 @@ public class XmlConfigReaderTest {
         ConfigInfo cInfo = configReader.read(null);
         assertThat(cInfo, notNullValue());
 
-        assertThat(errorMesage, nullValue());
-        assertThat(fatalMesage, nullValue());
+        assertThat(errorMessage, nullValue());
+        assertThat(fatalMessage, nullValue());
         assertThat(cInfo.getInterval(), is(rnd * 1000));
 
         assertThat(cInfo.getPointInfo().length, is(1));

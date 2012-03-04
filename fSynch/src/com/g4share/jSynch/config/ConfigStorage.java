@@ -25,7 +25,7 @@ public class ConfigStorage implements ConfigStore {
     }
 
     @Override
-    public void ErrorOccured(String hint) {
+    public void ErrorOccurred(String hint) {
         if (logger != null) {
             logger.logFatal(hint);
         }
@@ -63,14 +63,14 @@ public class ConfigStorage implements ConfigStore {
         try {
             return Integer.parseInt(value);
         } catch (NumberFormatException ex) {
-            ErrorOccured("Wrong interval: " + value);
+            ErrorOccurred("Wrong interval: " + value);
             return Constants.WRONG_NUMBER;
         }
     }
 
     private String GetValue(Map<String, String> map, String key) {
         if (map == null) {
-            ErrorOccured("Error: Empty keys map.");
+            ErrorOccurred("Error: Empty keys map.");
             return null;
         }
 
