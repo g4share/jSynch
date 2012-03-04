@@ -6,10 +6,7 @@ import com.g4share.jSynch.share.PointInfo;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * User: gm
@@ -24,6 +21,7 @@ public class ConfigStorage implements ConfigStore {
     @Inject
     public ConfigStorage(@Assisted Logger logger){
         this.logger = logger;
+        this.points = new HashSet<>();
     }
 
     @Override
@@ -33,20 +31,31 @@ public class ConfigStorage implements ConfigStore {
         }
     }
 
+    @Override
+    public int getInterval() {
+        return interval;
+    }
+
+    @Override
+    public Set<PointInfo> getPoints() {
+        return points;
+    }
+
     /**
      * store nodes as objects
      * @param node
      * @param attributes
      */
     @Override
-    public void AddNode(XmlNode node, HashMap<String, String> attributes) {
+    public void AddNode(XmlNode node, Map<String, String> attributes) {
         switch(node){
             case Interval:
-                String intervalRaw = GetValue(attributes, "seconds");
+                String intervalRaw = GetValue(attributes, Constants.SECONDS_ATTRIBUTE);
                 interval = tryParse(intervalRaw);
                 break;
             case Path:
-                addNewPath(GetValue(attributes, "name"), GetValue(attributes, "value"));
+                addNewPath(GetValue(attributes, Constants.NAME_ATTRIBUTE),
+                        GetValue(attributes, Constants.VALUE_ATTRIBUTE));
         }
     }
 
@@ -54,16 +63,23 @@ public class ConfigStorage implements ConfigStore {
         try {
             return Integer.parseInt(value);
         } catch (NumberFormatException ex) {
+            ErrorOccured("Wrong interval: " + value);
             return Constants.WRONG_NUMBER;
         }
     }
 
     private String GetValue(Map<String, String> map, String key) {
+        if (map == null) {
+            ErrorOccured("Error: Empty keys map.");
+            return null;
+        }
+
         for (Map.Entry<String, String> mapEntry : map.entrySet()) {
             if(mapEntry.getKey().equalsIgnoreCase(key)){
                 return mapEntry.getValue();
             }
         }
+
         return null;
     }
 

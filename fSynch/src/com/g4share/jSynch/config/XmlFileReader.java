@@ -23,9 +23,15 @@ public class XmlFileReader implements XmlReader{
 
     @Override
     @Inject
-    public void setManager(ConfigStore store){
-        this.store = store;
+    public void setStore(ConfigStore configStore){
+        this.store = configStore;
     }
+
+    @Override
+    public ConfigStore getStore() {
+        return store;
+    }
+
     /**
      * reads information stored in specified file
      * @param configFileName file name

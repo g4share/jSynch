@@ -12,6 +12,10 @@ public final class Constants {
 
     public static final int WRONG_NUMBER = Integer.MIN_VALUE;
 
+    public static final String SECONDS_ATTRIBUTE = "seconds";
+    public static final String NAME_ATTRIBUTE = "name";
+    public static final String VALUE_ATTRIBUTE = "value";
+
     public enum Codes {
         FATAL_ERROR_CODE(-1),
         ERROR_CODE(1),

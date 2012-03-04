@@ -26,17 +26,15 @@ public class XmlConfigReader implements ConfigReader {
         this.xmlReader = xmlReader;
     }
 
-    private Set<PointInfo> points;
-    private int interval;
-
-
     @Override
     public ConfigInfo read(String path){
-        points = new HashSet<>();
-        //xmlReader.setManager(new ConfigManager());
+        //xmlReader.setStore(new ConfigManager());
 
         Constants.Codes result = xmlReader.read(path);
         if (result == null) return null;
+
+        int interval = xmlReader.getStore().getInterval();
+        Set<PointInfo> points = xmlReader.getStore().getPoints();
 
         switch (interval){
             case 0:
@@ -86,5 +84,4 @@ public class XmlConfigReader implements ConfigReader {
         points = null;
         return config;
     }
-
 }

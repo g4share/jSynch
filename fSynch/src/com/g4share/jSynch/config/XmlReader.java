@@ -7,6 +7,8 @@ import com.g4share.jSynch.share.Constants;
  * Date: 3/3/12
  */
 public interface XmlReader {
-    void setManager(ConfigStore storeManager);
+    void setStore(ConfigStore configStore);
+    ConfigStore getStore();
+
     Constants.Codes read(String path);
 }

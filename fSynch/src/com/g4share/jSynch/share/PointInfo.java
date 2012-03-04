@@ -37,6 +37,6 @@ public class PointInfo {
      * @return paths to be synchronized
      */
     public String[] getStorePaths() {
-        return (String[]) storePaths.toArray(new String[storePaths.size()]);
+        return  storePaths.toArray(new String[storePaths.size()]);
     }
 }
