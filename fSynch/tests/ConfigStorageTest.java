@@ -11,6 +11,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Random;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -86,6 +87,21 @@ public class ConfigStorageTest {
     }
 
     @Test
+    public void testIntervalAdded() throws Exception {
+        assertThat(store.getInterval(), is(0));
+        assertThat(fatal, is(false));
+
+        Map<String, String> attributes = new HashMap<>();
+
+        attributes.put(Constants.SECONDS_ATTRIBUTE, "47");
+        store.AddNode(XmlNode.Interval, attributes);
+
+        assertThat(store.getPoints().size(), is(0));
+        assertThat(store.getInterval(), is(47));
+        assertThat(fatal, is(false));
+    }
+
+    @Test
     public void testPointAPathAAdded() throws Exception {
         Map<String, String> attributes = new HashMap<>();
         attributes.put(Constants.NAME_ATTRIBUTE, "pointA");
@@ -115,7 +131,7 @@ public class ConfigStorageTest {
 
         attributes.clear();
         attributes.put(Constants.NAME_ATTRIBUTE, "pointB");
-        attributes.put(Constants.VALUE_ATTRIBUTE, "pointB pathC");
+        attributes.put(Constants.VALUE_ATTRIBUTE, "pointB pathBB");
         store.AddNode(XmlNode.Path, attributes);
 
 
@@ -147,7 +163,7 @@ public class ConfigStorageTest {
         }
         assertThat(pInfoB.getStorePaths().length, is(2));
         assertThat(pInfoB.getStorePaths()[0], is("pointB pathB"));
-        assertThat(pInfoB.getStorePaths()[1], is("pointB pathC"));
+        assertThat(pInfoB.getStorePaths()[1], is("pointB pathBB"));
 
         assertThat(fatal, is(false));
     }

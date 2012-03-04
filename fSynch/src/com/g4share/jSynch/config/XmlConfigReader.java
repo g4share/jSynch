@@ -28,8 +28,6 @@ public class XmlConfigReader implements ConfigReader {
 
     @Override
     public ConfigInfo read(String path){
-        //xmlReader.setStore(new ConfigManager());
-
         Constants.Codes result = xmlReader.read(path);
         if (result == null) return null;
 
@@ -51,7 +49,7 @@ public class XmlConfigReader implements ConfigReader {
 
         if (points.isEmpty()) {
             if (logger != null) {
-                logger.logFatal("There are no points to be syncronized.");
+                logger.logFatal("There are no points to be synchronized.");
             }
 
             return null;
@@ -62,7 +60,7 @@ public class XmlConfigReader implements ConfigReader {
             PointInfo info = iter.next();
             if (info == null || info.getStorePaths().length < 2){
                 if (logger != null) {
-                    logger.logError("Point \"" + info.getName() +  "\" removed. It should be at least 2 points to be syncronized.");
+                    logger.logError("Point \"" + info.getName() +  "\" removed. It should be at least 2 points to be synchronized.");
                 }
                 iter.remove();
             }
@@ -70,7 +68,7 @@ public class XmlConfigReader implements ConfigReader {
 
         if (points.isEmpty()) {
             if (logger != null) {
-                logger.logFatal("There are no points to be syncronized.");
+                logger.logFatal("There are no points to be synchronized.");
             }
             return null;
         }

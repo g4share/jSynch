@@ -6,47 +6,131 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNull.notNullValue;
+import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
 
 /**
-* Created by IntelliJ IDEA.
-* User: gm
-* Date: 3/4/12
-* Time: 12:52 AM
-* To change this template use File | Settings | File Templates.
-*/
+ * User: gm
+ * Date: 3/4/12
+ */
 public class XmlConfigReaderTest {
-    ConfigReader configReader;
+    Logger logger;
+    String fatalMesage;
+    String errorMesage;
 
     @Before
     public void setUp() throws Exception {
-        configReader = new XmlConfigReader(new Logger() {
+        logger = new Logger() {
             @Override
-            public void logEvent(String message) {
-                //To change body of implemented methods use File | Settings | File Templates.
-            }
+            public void logEvent(String message) {}
 
             @Override
             public void logError(String exception) {
-                //To change body of implemented methods use File | Settings | File Templates.
+                errorMesage = exception;
             }
 
             @Override
             public void logFatal(String exception) {
-                //To change body of implemented methods use File | Settings | File Templates.
-            }
-        }, new TestXmlReader());
+                fatalMesage = exception;
+            }};
+
+        fatalMesage = null;
     }
 
     @Test
-    public void testRead() throws Exception {
+    public void testReadError() throws Exception {
+        TestXmlReader testXmlReader = new TestXmlReader() {
+            @Override
+            public Constants.Codes read(String path) {
+                configStore.AddNode(XmlNode.none, null);
+                return Constants.Codes.ERROR_CODE;
+            }
+        };
+        testXmlReader.setStore(new ConfigStorage(logger));
+        ConfigReader configReader = new XmlConfigReader(logger, testXmlReader);
+
         ConfigInfo cInfo = configReader.read(null);
-        assertThat(cInfo.getInterval(), is(0));
-        assertThat(cInfo.getPointInfo().length, is(0));
+        assertThat(cInfo, nullValue());
+        assertThat(fatalMesage, containsString("interval"));
     }
 
-    private class TestXmlReader implements XmlReader {
+    @Test
+    public void testNotEnoughtPoints() throws Exception {
+        final int rnd = new Random().nextInt();
+        TestXmlReader testXmlReader = new TestXmlReader() {
+            @Override
+            public Constants.Codes read(String path) {
+                Map<String, String> attributes = new HashMap<>();
+
+                attributes.put(Constants.SECONDS_ATTRIBUTE, Integer.toString(rnd));
+
+                attributes.put(Constants.NAME_ATTRIBUTE, "pointA");
+                attributes.put(Constants.VALUE_ATTRIBUTE, "pointA pathA");
+
+                configStore.AddNode(XmlNode.Interval, attributes);
+                configStore.AddNode(XmlNode.Path, attributes);
+
+                return Constants.Codes.SUCCESS_CODE;
+            }
+        };
+
+        testXmlReader.setStore(new ConfigStorage(logger));
+        ConfigReader configReader = new XmlConfigReader(logger, testXmlReader);
+
+        ConfigInfo cInfo = configReader.read(null);
+        assertThat(cInfo, nullValue());
+
+        assertThat(errorMesage, containsString("at least 2 points"));
+        assertThat(fatalMesage, containsString("There are no points"));
+    }
+
+
+    @Test
+    public void testRead() throws Exception {
+        final int rnd = new Random().nextInt(1000);
+        TestXmlReader testXmlReader = new TestXmlReader() {
+            @Override
+            public Constants.Codes read(String path) {
+                Map<String, String> attributes = new HashMap<>();
+
+                attributes.put(Constants.SECONDS_ATTRIBUTE, Integer.toString(rnd));
+                configStore.AddNode(XmlNode.Interval, attributes);
+
+                attributes.clear();
+                attributes.put(Constants.NAME_ATTRIBUTE, "pointA");
+                attributes.put(Constants.VALUE_ATTRIBUTE, "pointA pathA");
+                configStore.AddNode(XmlNode.Path, attributes);
+
+                attributes.clear();
+                attributes.put(Constants.NAME_ATTRIBUTE, "pointA");
+                attributes.put(Constants.VALUE_ATTRIBUTE, "pointA pathAA");
+                configStore.AddNode(XmlNode.Path, attributes);
+
+                return Constants.Codes.SUCCESS_CODE;
+            }
+        };
+
+        testXmlReader.setStore(new ConfigStorage(logger));
+        ConfigReader configReader = new XmlConfigReader(logger, testXmlReader);
+
+        ConfigInfo cInfo = configReader.read(null);
+        assertThat(cInfo, notNullValue());
+
+        assertThat(errorMesage, nullValue());
+        assertThat(fatalMesage, nullValue());
+        assertThat(cInfo.getInterval(), is(rnd * 1000));
+
+        assertThat(cInfo.getPointInfo().length, is(1));
+    }
+
+    private abstract class TestXmlReader implements XmlReader {
         ConfigStore configStore;
 
         @Override
@@ -60,9 +144,6 @@ public class XmlConfigReaderTest {
         }
 
         @Override
-        public Constants.Codes read(String path) {
-            configStore.AddNode(XmlNode.none, null);
-            return Constants.Codes.SUCCESS_CODE;
-        }
+        public abstract Constants.Codes read(String path);
     }
 }
