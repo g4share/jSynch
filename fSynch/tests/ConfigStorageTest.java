@@ -18,11 +18,8 @@ import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
 
 /**
-* Created by IntelliJ IDEA.
 * User: gm
 * Date: 3/4/12
-* Time: 1:11 PM
-* To change this template use File | Settings | File Templates.
 */
 public class ConfigStorageTest {
     ConfigStore store;
