@@ -1,5 +1,7 @@
 package com.g4share.jSynch.share;
 
+import java.nio.channels.FileChannel;
+
 /**
  * User: gm
  * Date: 3/5/12
@@ -16,4 +18,7 @@ public interface PointStoreHelper {
     void folderCreate(String relativePath);
 
     String combine(String... paths);
+
+    FileChannel getReadChannel(String pathRead);
+    public boolean writeChannel(FileChannel source, String writePath);
 }

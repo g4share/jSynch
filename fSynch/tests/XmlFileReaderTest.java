@@ -26,11 +26,8 @@ import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
 
 /**
-* Created by IntelliJ IDEA.
 * User: gm
 * Date: 3/4/12
-* Time: 7:45 PM
-* To change this template use File | Settings | File Templates.
 */
 public class XmlFileReaderTest {
     XmlReader xmlReader;

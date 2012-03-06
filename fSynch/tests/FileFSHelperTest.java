@@ -5,10 +5,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.nio.channels.FileChannel;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -138,6 +136,15 @@ public class FileFSHelperTest {
     }
 
     @Test
+    public void testFileContent() throws Exception {
+        String fn = "file";
+        createFile(tPathName + "/" + fn);
+        String content = readFileAsString(tPathName + "/" + fn);
+
+        assertThat(content, is("12345"));
+    }
+
+    @Test
     public void testEmptyRootList() throws Exception {
         String[] files = storeHelper.getFiles(tPathName);
         String[] folders = storeHelper.getFolders(tPathName);
@@ -189,6 +196,26 @@ public class FileFSHelperTest {
         assertThat(found, is(true));
     }
 
+    @Test
+    public void testCopyFile() throws Exception {
+        String fn = "file";
+        storeHelper.folderCreate("folder");
+
+        createFile(tPathName + "/" + fn);
+        String contentFrom = readFileAsString(tPathName + "/" + fn);
+
+        FileChannel source = null;
+        try{
+            source = storeHelper.getReadChannel("/" + fn);
+            storeHelper.writeChannel(source, "/folder/copy")  ;
+        }finally {
+            if (source != null) source.close();
+        }
+
+        String contentTo = readFileAsString(tPathName + "/folder/copy");
+        assertThat(contentTo, is(contentFrom));
+    }
+
 
     private boolean arrayContainsItem(String[] array, String item2Find){
         for(String item : array){
@@ -196,7 +223,6 @@ public class FileFSHelperTest {
         }
         return false;
     }
-        
 
     private void createFile(String tFileName) throws IOException {
         try (PrintWriter writer = new PrintWriter(new FileWriter(tFileName, true))) {
@@ -204,4 +230,11 @@ public class FileFSHelperTest {
         } catch (IOException e){ throw e;}
     }
 
+    private static String readFileAsString(String filePath) throws java.io.IOException{
+        byte[] buffer = new byte[(int) new File(filePath).length()];
+        try(BufferedInputStream f = new BufferedInputStream(new FileInputStream(filePath))) {
+            f.read(buffer);
+        }
+        return new String(buffer);
+    }
 }

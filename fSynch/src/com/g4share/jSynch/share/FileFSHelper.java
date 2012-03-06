@@ -1,6 +1,7 @@
 package com.g4share.jSynch.share;
 
-import java.io.File;
+import java.io.*;
+import java.nio.channels.FileChannel;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,7 +10,6 @@ import java.util.Set;
  * Date: 3/5/12
  */
 public class FileFSHelper implements PointStoreHelper{
-
     private String path;
 
     public FileFSHelper(String path) {
@@ -88,7 +88,6 @@ public class FileFSHelper implements PointStoreHelper{
         return combineInternal(true, paths);
     }
 
-
     public String combineInternal(boolean relative, String... paths){
         if (paths.length == 0 && relative) return null;
         String localPath = (relative ? paths[0]: path).replace(Constants.WIN_PATH_DELIMITER, Constants.JAVA_PATH_DELIMITER);
@@ -116,5 +115,27 @@ public class FileFSHelper implements PointStoreHelper{
         }
 
         return localPath;
+    }
+
+    @Override
+    public FileChannel getReadChannel(String pathRead) {
+        String fileFrom = combine(path, pathRead);
+
+        try {
+            return new FileInputStream(fileFrom).getChannel();
+        } catch (FileNotFoundException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public boolean writeChannel(FileChannel source, String writePath) {
+        String fileTo = combine(path, writePath);
+        try (FileChannel destination = new FileOutputStream(fileTo).getChannel()) {
+            destination.transferFrom(source, 0, source.size());
+        } catch (IOException ex) {
+            return false;
+        }
+        return true;
     }
 }

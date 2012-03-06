@@ -17,9 +17,9 @@
     <SUITE FILE_PATH="coverage/jSynch$FileFSHelperTest_testPathCombine.ic" NAME="FileFSHelperTest.testPathCombine Coverage Results" MODIFIED="1331064935463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$XmlConfigReaderTest.ic" NAME="XmlConfigReaderTest Coverage Results" MODIFIED="1331061930298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$FileLoggerTest.ic" NAME="FileLoggerTest Coverage Results" MODIFIED="1331061925701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/jSynch$ConfigStorageTest_and_4_more.ic" NAME="ConfigStorageTest and 4 more Coverage Results" MODIFIED="1331064955971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/jSynch$ConfigStorageTest_and_4_more.ic" NAME="ConfigStorageTest and 4 more Coverage Results" MODIFIED="1331068385034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$ConfigStorageTest.ic" NAME="ConfigStorageTest Coverage Results" MODIFIED="1331061922045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/jSynch$FileFSHelperTest.ic" NAME="FileFSHelperTest Coverage Results" MODIFIED="1331063156252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/jSynch$FileFSHelperTest.ic" NAME="FileFSHelperTest Coverage Results" MODIFIED="1331068375402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$FileFSHelperTest_testFullList.ic" NAME="FileFSHelperTest.testFullList Coverage Results" MODIFIED="1331062088857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$XmlConfigReaderTest_and_2_more.ic" NAME="XmlConfigReaderTest and 2 more Coverage Results" MODIFIED="1330873451295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
@@ -34,7 +34,7 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java" line="160" class="FileFSHelperTest" package="">
+      <breakpoint url="file://$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java" line="167" class="FileFSHelperTest" package="">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -47,20 +47,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java" line="157" class="FileFSHelperTest" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java" line="140" class="FileFSHelperTest" package="">
+      <breakpoint url="file://$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java" line="164" class="FileFSHelperTest" package="">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -114,70 +101,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FileLoggerTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/tests/FileLoggerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FileFSHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="18" selection-start="3206" selection-end="3206" vertical-scroll-proportion="-5.44">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="String.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.7.0_02/src.zip!/java/lang/String.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1461" column="19" selection-start="57245" selection-end="57245" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileFSHelperTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="4" selection-start="821" selection-end="821" vertical-scroll-proportion="0.5385827">
+            <state line="120" column="22" selection-start="3897" selection-end="3908" vertical-scroll-proportion="-9.52">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#testFileNotExists#0;class#FileFSHelperTest#0" expanded="false" />
-                <element signature="method#testFolderNotExists#0;class#FileFSHelperTest#0" expanded="false" />
-                <element signature="method#testFolderExists#0;class#FileFSHelperTest#0" expanded="false" />
-                <element signature="method#testFolderIsNotAFile#0;class#FileFSHelperTest#0" expanded="false" />
-                <element signature="method#testCreateFolder#0;class#FileFSHelperTest#0" expanded="false" />
-                <element signature="method#testFileSize#0;class#FileFSHelperTest#0" expanded="false" />
-                <element signature="method#testEmptyRootList#0;class#FileFSHelperTest#0" expanded="false" />
-                <element signature="method#testFullList#0;class#FileFSHelperTest#0" expanded="false" />
-                <element signature="method#testCustomPathList#0;class#FileFSHelperTest#0" expanded="false" />
-                <element signature="method#arrayContainsItem#0;class#FileFSHelperTest#0" expanded="false" />
-                <element signature="method#createFile#0;class#FileFSHelperTest#0" expanded="false" />
+                <element signature="method#folderExists#0;class#FileFSHelper#0" expanded="false" />
+                <element signature="method#fileExists#0;class#FileFSHelper#0" expanded="false" />
+                <element signature="method#folderCreate#0;class#FileFSHelper#0" expanded="false" />
+                <element signature="method#combineInternal#0;class#FileFSHelper#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReflectiveCallable.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <file leaf-file-name="XmlFileReaderTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="40" selection-start="397" selection-end="397" vertical-scroll-proportion="-6.8">
+            <state line="30" column="0" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExternalResource.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/rules/ExternalResource.class">
+      <file leaf-file-name="FSSynchManager.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FSSynchManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="8" column="21" selection-start="131" selection-end="131" vertical-scroll-proportion="0.21417323">
               <folding>
-                <element signature="e#0#704#0" expanded="true" />
+                <element signature="method#getFolder#0;class#FSSynchManager#0" expanded="false" />
+                <element signature="method#getFolder#1;class#FSSynchManager#0" expanded="false" />
+                <element signature="method#setFolder#0;class#FSSynchManager#0" expanded="false" />
+                <element signature="method#setFolder#1;class#FSSynchManager#0" expanded="false" />
+                <element signature="method#SynchFolder#0;class#FSSynchManager#0" expanded="false" />
+                <element signature="method#SynchFile#0;class#FSSynchManager#0" expanded="false" />
+                <element signature="method#logEvent#0;class#FSSynchManager#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -186,7 +144,7 @@
       <file leaf-file-name="SynchManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="35" selection-start="4663" selection-end="4663" vertical-scroll-proportion="0.0">
+            <state line="11" column="56" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -201,10 +159,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PointStoreHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStoreHelper.java">
+      <file leaf-file-name="SynchManagerTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/tests/SynchManagerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="11" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
+            <state line="39" column="29" selection-start="1156" selection-end="1156" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XmlConfigReaderTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/tests/XmlConfigReaderTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="13" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigStorageTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="13" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileFSHelperTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="226" column="0" selection-start="6856" selection-end="7092" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#testFullList#0;class#FileFSHelperTest#0" expanded="false" />
+                <element signature="method#testCustomPathList#0;class#FileFSHelperTest#0" expanded="false" />
+                <element signature="method#testCopyFile#0;class#FileFSHelperTest#0" expanded="false" />
+                <element signature="method#arrayContainsItem#0;class#FileFSHelperTest#0" expanded="false" />
+                <element signature="method#createFile#0;class#FileFSHelperTest#0" expanded="false" />
+                <element signature="method#readFileAsString#0;class#FileFSHelperTest#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileLoggerTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/tests/FileLoggerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="13" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -225,22 +229,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java" />
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlNodeDefinitionImpl.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlNodeDefinition.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlNode.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStore.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStorage.java" />
         <option value="$PROJECT_DIR$/fSynch/tests/XmlConfigReaderTest.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlFileReader.java" />
-        <option value="$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchFile.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchFolder.java" />
         <option value="$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStoreHelper.java" />
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchManager.java" />
         <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java" />
         <option value="$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java" />
+        <option value="$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java" />
+        <option value="$PROJECT_DIR$/fSynch/tests/SynchManagerTest.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FSSynchManager.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchManager.java" />
       </list>
     </option>
   </component>
@@ -546,6 +550,7 @@
       <recent name="" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
       <recent name="com.g4share.jSynch.config" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
@@ -844,8 +849,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -863,7 +868,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32965687" sideWeight="0.78341013" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21658987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21658987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.05299539" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -927,53 +932,72 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStore.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/model/FrameworkMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="17" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+          <folding>
+            <element signature="e#0#1777#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java">
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="5" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/tests/XmlConfigReaderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="4" selection-start="1152" selection-end="1169" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/StoreManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="17" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
+        <state line="8" column="13" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_02/src.zip!/java/nio/channels/FileChannel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="689" selection-end="743" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/tests/FileLoggerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0" />
+        <state line="155" column="40" selection-start="7048" selection-end="7076" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStoreHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="11" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
+        <state line="22" column="18" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchManager.java">
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/FileLoggerProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="35" selection-start="4663" selection-end="4663" vertical-scroll-proportion="0.0">
+        <state line="6" column="13" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/FileLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="8" selection-start="1125" selection-end="1221" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="22" selection-start="3897" selection-end="3908" vertical-scroll-proportion="-9.52">
+          <folding>
+            <element signature="method#folderExists#0;class#FileFSHelper#0" expanded="false" />
+            <element signature="method#fileExists#0;class#FileFSHelper#0" expanded="false" />
+            <element signature="method#folderCreate#0;class#FileFSHelper#0" expanded="false" />
+            <element signature="method#combineInternal#0;class#FileFSHelper#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/tests/FileLoggerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/tests/XmlConfigReaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="13" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -985,61 +1009,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_02/src.zip!/java/lang/String.java">
+    <entry file="file://$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1461" column="19" selection-start="57245" selection-end="57245" vertical-scroll-proportion="0.0">
+        <state line="23" column="13" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/rules/ExternalResource.class">
+    <entry file="file://$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#704#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="397" selection-end="397" vertical-scroll-proportion="-6.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/model/FrameworkMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding>
-            <element signature="e#0#1777#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="18" selection-start="3206" selection-end="3206" vertical-scroll-proportion="-5.44">
+        <state line="30" column="0" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="4" selection-start="821" selection-end="821" vertical-scroll-proportion="0.5385827">
+        <state line="226" column="0" selection-start="6856" selection-end="7092" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#testFileNotExists#0;class#FileFSHelperTest#0" expanded="false" />
-            <element signature="method#testFolderNotExists#0;class#FileFSHelperTest#0" expanded="false" />
-            <element signature="method#testFolderExists#0;class#FileFSHelperTest#0" expanded="false" />
-            <element signature="method#testFolderIsNotAFile#0;class#FileFSHelperTest#0" expanded="false" />
-            <element signature="method#testCreateFolder#0;class#FileFSHelperTest#0" expanded="false" />
-            <element signature="method#testFileSize#0;class#FileFSHelperTest#0" expanded="false" />
-            <element signature="method#testEmptyRootList#0;class#FileFSHelperTest#0" expanded="false" />
             <element signature="method#testFullList#0;class#FileFSHelperTest#0" expanded="false" />
             <element signature="method#testCustomPathList#0;class#FileFSHelperTest#0" expanded="false" />
+            <element signature="method#testCopyFile#0;class#FileFSHelperTest#0" expanded="false" />
             <element signature="method#arrayContainsItem#0;class#FileFSHelperTest#0" expanded="false" />
             <element signature="method#createFile#0;class#FileFSHelperTest#0" expanded="false" />
+            <element signature="method#readFileAsString#0;class#FileFSHelperTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/tests/SynchManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="29" selection-start="1156" selection-end="1156" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="56" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FSSynchManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="21" selection-start="131" selection-end="131" vertical-scroll-proportion="0.21417323">
+          <folding>
+            <element signature="method#getFolder#0;class#FSSynchManager#0" expanded="false" />
+            <element signature="method#getFolder#1;class#FSSynchManager#0" expanded="false" />
+            <element signature="method#setFolder#0;class#FSSynchManager#0" expanded="false" />
+            <element signature="method#setFolder#1;class#FSSynchManager#0" expanded="false" />
+            <element signature="method#SynchFolder#0;class#FSSynchManager#0" expanded="false" />
+            <element signature="method#SynchFile#0;class#FSSynchManager#0" expanded="false" />
+            <element signature="method#logEvent#0;class#FSSynchManager#0" expanded="false" />
           </folding>
         </state>
       </provider>
