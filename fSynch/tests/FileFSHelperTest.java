@@ -32,6 +32,12 @@ public class FileFSHelperTest {
     }
 
     @Test
+    public void testPathCombine() throws Exception {
+        String combinedPath = storeHelper.combine("", "/", "/1/", "/2", "3", "\\4\\", "/5");
+        assertThat(combinedPath, is("/1/2/3/4/5"));
+    }
+
+    @Test
     public void testFileNotExists() throws Exception {
         boolean fileExists = storeHelper.fileExists("file");
         assertThat(fileExists, is(false));
@@ -152,8 +158,8 @@ public class FileFSHelperTest {
         createFile(tPathName + "/rootFile1");
         createFile(tPathName + "/rootFile2");
 
-        String[] files = storeHelper.getFiles("");
-        String[] folders = storeHelper.getFolders("");
+        String[] files = storeHelper.getFiles("/");
+        String[] folders = storeHelper.getFolders("/");
 
         assertThat(files.length, is(2));
         assertThat(folders, nullValue());

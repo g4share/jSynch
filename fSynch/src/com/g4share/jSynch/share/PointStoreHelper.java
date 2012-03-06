@@ -14,4 +14,6 @@ public interface PointStoreHelper {
     long getSize(String relativePath);
 
     void folderCreate(String relativePath);
+
+    String combine(String... paths);
 }
