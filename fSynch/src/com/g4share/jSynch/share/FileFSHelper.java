@@ -27,9 +27,9 @@ public class FileFSHelper implements PointStoreHelper{
         if (listOfFiles == null || listOfFiles.length == 0) return null;
 
         Set<String> folders = new HashSet<>();
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isDirectory()) {
-                folders.add(listOfFiles[i].getName());
+        for (File listOfFile : listOfFiles) {
+            if (listOfFile.isDirectory()) {
+                folders.add(listOfFile.getName());
             }
         }
 
@@ -44,9 +44,9 @@ public class FileFSHelper implements PointStoreHelper{
         if (listOfFiles == null || listOfFiles.length == 0) return null;
 
         Set<String> files = new HashSet<>();
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile()) {
-                files.add(listOfFiles[i].getName());
+        for (File listOfFile : listOfFiles) {
+            if (listOfFile.isFile()) {
+                files.add(listOfFile.getName());
             }
         }
 
@@ -59,16 +59,14 @@ public class FileFSHelper implements PointStoreHelper{
     public boolean folderExists(String relativePath) {
         String absolutePath = combineInternal(false, relativePath);
         File folder = new File(absolutePath);
-        if (!folder.exists()) return false;
-        return folder.isDirectory();
+        return folder.exists() && folder.isDirectory();
     }
 
     @Override
     public boolean fileExists(String relativePath) {
         String absolutePath = combineInternal(false, relativePath);
         File file = new File(absolutePath);
-        if (!file.exists()) return false;
-        return file.isFile();
+        return file.exists() && file.isFile();
     }
 
     @Override
@@ -97,7 +95,7 @@ public class FileFSHelper implements PointStoreHelper{
             if (paths[i].equals("")
                     || paths[i].equals(Constants.JAVA_PATH_DELIMITER + "")) continue;
 
-            String processedPath = paths[i].replace(Constants.WIN_PATH_DELIMITER, Constants.JAVA_PATH_DELIMITER);;
+            String processedPath = paths[i].replace(Constants.WIN_PATH_DELIMITER, Constants.JAVA_PATH_DELIMITER);
 
             //delimiter should be added between
             if (localPath.charAt(localPath.length() - 1) != Constants.JAVA_PATH_DELIMITER

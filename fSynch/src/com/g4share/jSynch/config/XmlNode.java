@@ -26,9 +26,8 @@ public enum XmlNode {
 
     public boolean isPathKey(EnumSet<XmlNode> path) {
         int value = code;
-        Iterator<XmlNode> it = path.iterator();
-        while(it.hasNext()){
-            value -= it.next().code;
+        for (XmlNode aPath : path) {
+            value -= aPath.code;
         }
 
         return value == 0;

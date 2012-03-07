@@ -41,11 +41,7 @@ public class ConfigStorage implements ConfigStore {
         return points;
     }
 
-    /**
-     * store nodes as objects
-     * @param node
-     * @param attributes
-     */
+
     @Override
     public void AddNode(XmlNode node, Map<String, String> attributes) {
         switch(node){
@@ -85,10 +81,8 @@ public class ConfigStorage implements ConfigStore {
 
     private void addNewPath(String configName, String path) {
         PointInfo pInfo = null;
-        Iterator<PointInfo> it = points.iterator();
-        while (it.hasNext()){
-            PointInfo tempConfig = it.next();
-            if (tempConfig.getName().equals(configName)){
+        for (PointInfo tempConfig : points) {
+            if (tempConfig.getName().equals(configName)) {
                 pInfo = tempConfig;
                 break;
             }
@@ -100,7 +94,7 @@ public class ConfigStorage implements ConfigStore {
             points.add(pInfo);
         }
 
-        //there is posibility in windows to set "\" base path
+        //there is possibility in windows to set "\" base path
         path = path.replace(Constants.WIN_PATH_DELIMITER,
                 Constants.JAVA_PATH_DELIMITER).trim();
 

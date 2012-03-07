@@ -10,5 +10,5 @@ import java.util.HashMap;
  */
 public interface StoreManager {
     void AddNode(XmlNode node, HashMap<String, String> attributes);
-    void ErrorOccured(String hint);
+    void ErrorOccurred(String hint);
 }

@@ -32,10 +32,6 @@ public class XmlFileReader implements XmlReader{
         return store;
     }
 
-    /**
-     * reads information stored in specified file
-     * @param configFileName file name
-     */
     @Override
     public Constants.Codes read(String configFileName){
         //open file
@@ -75,7 +71,7 @@ public class XmlFileReader implements XmlReader{
                     HashMap<String, String> keyValues = new HashMap<>();
 
                     for(int i = 0; i < attributes.getLength(); i++){
-                        //store each attribude
+                        //store each attribute
                         keyValues.put(attributes.getQName(i), attributes.getValue(i));
                     }
 
@@ -94,7 +90,7 @@ public class XmlFileReader implements XmlReader{
                 XmlNode node = XmlNode.fromString(qName);
                 if (node == XmlNode.none) return;
 
-                ///chane current xml node back
+                //change current xml node back
                 currentPath.remove(node);
             }
 

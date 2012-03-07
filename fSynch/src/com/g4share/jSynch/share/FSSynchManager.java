@@ -2,6 +2,8 @@ package com.g4share.jSynch.share;
 
 import com.g4share.jSynch.log.Logger;
 
+import java.nio.channels.FileChannel;
+
 /**
  * User: gm
  * Date: 3/6/12
@@ -56,93 +58,71 @@ public class FSSynchManager implements SynchManager {
         return new SynchFolder(relativePath, synchFolders, synchFiles);
     }
 
-    /**
-     * synchronize folder with another one
-     * @param folder folder to be synchronized
-     * @return
-     */
+
     @Override
-    public Constants.Codes setFolder(SynchFolder folder, PointStoreHelper pointHelper){
+    public Constants.Codes setFolder(PointStoreHelper pointHelper, String relativePath){
         if (!pointHelper.folderExists(Constants.ROOT)){
             logError("Could not find root folder \""  + location + "\". Please create.", false);
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 
-        return setFolder(pointHelper, folder);
-    }
-
-    private Constants.Codes setFolder(PointStoreHelper pointHelper, SynchFolder folder) {
-        Constants.Codes returnCode = Constants.Codes.SUCCESS_CODE;
-
-        //get ffolder file list
-        SynchFile[] files = folder.getFiles();
-
-        //if there is any file
-        if (files != null && files.length > 0){
-            String relativePath = folder.getRelativePath();
-            for(SynchFile file : files){
-                //synchronize it
-                SynchFile(pointHelper, file, relativePath);
-            }
-        }
-
-        SynchFolder[] folders = folder.getFolders();
-        if (folders == null || folders.length == 0) return returnCode;
-
-        for(SynchFolder innerFolder : folders){
-            String relativePath = innerFolder.getRelativePath();
-            if (!pointHelper.folderExists(relativePath)){
-                //synchronize it
-                SynchFolder(pointHelper, relativePath);
-
-                //do the same for each inner folder
-                setFolder(pointHelper, innerFolder);
-            }
-        }
-        return returnCode;
-    }
-
-
-    private void SynchFolder(PointStoreHelper pointHelper, String relativePath){
         if (pointHelper.fileExists(relativePath)){
             logError("Could not create \""  + relativePath
                     + "\" folder because there is a file at this location.", false);
-            return;
+
+            return Constants.Codes.FATAL_ERROR_CODE;
         }
+
+
+        if (pointHelper.folderExists(relativePath)){
+            return Constants.Codes.SUCCESS_CODE;
+        }
+
         pointHelper.folderCreate(relativePath);
+
         if (!pointHelper.folderExists(relativePath)){
             logError("Could not create \""  + relativePath + "\" folder.", false);
-            return;
+            return Constants.Codes.FATAL_ERROR_CODE;
         }
+
         logEvent("Folder \"" + relativePath + "\" has been created.");
+        return Constants.Codes.SUCCESS_CODE;
     }
 
-    private void SynchFile(PointStoreHelper pointHelper, SynchFile file, String relativePath){
-        String path = pointHelper.combine(relativePath, file.getName());
+    @Override
+    public Constants.Codes checkFile(PointStoreHelper pointHelper, SynchFile synchFile){
+        if (!pointHelper.folderExists(Constants.ROOT)){
+            logError("Could not find root folder \""  + location + "\". Please create.", false);
+            return Constants.Codes.FATAL_ERROR_CODE;
+        }
 
-        //conflict are checked on FS copy (because here nobody
-        //knows about full path)
-        if (pointHelper.folderExists(path)){
-            logError("Could not create \""  + path
+        if (!pointHelper.fileExists(synchFile.getName())){
+            return Constants.Codes.ERROR_CODE;
+        }
+
+        if (pointHelper.folderExists(synchFile.getName())){
+            logError("Could not create \""  + synchFile.getName()
                     + "\" file because there is a folder at this location.", false);
-            return;
-        }
-        if (pointHelper == null) {
-            logError("Could not synchtonise file \"" + path
-                    + "\". No synch method found.", false);
-            return;
+
+            return Constants.Codes.SUCCESS_CODE;
         }
 
-        //syncronise file
-        boolean copiedNew = true;//pointHelper.Share(path);
-        if (!pointHelper.fileExists(path)){
-            logError("Could not synchronize \""  + path + "\" file.", false);
-            return;
+        long localSize = pointHelper.getSize(synchFile.getName());
+        if (localSize != synchFile.getSize()){
+            logger.logFatal("conflict for \"" + synchFile.getSize()
+                    + "\" file (" + synchFile.getSize() + " - > " + localSize + ").");
         }
 
-        if (copiedNew) logEvent("File \"" + path + "\" has been syncronised.");
+        return Constants.Codes.SUCCESS_CODE;
     }
 
+
+    public void setFile(PointStoreHelper pointHelper, SynchFile synchFile, FileChannel source) {
+        if (checkFile(pointHelper, synchFile) != Constants.Codes.ERROR_CODE){
+            return;
+        }
+        pointHelper.writeChannel(source, synchFile.getName());
+    }
 
 
     private void logEvent(String message){

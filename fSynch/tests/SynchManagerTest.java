@@ -1,4 +1,5 @@
 import com.g4share.jSynch.share.*;
+import org.hamcrest.core.IsNull;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -17,6 +18,7 @@ import java.util.Set;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNull.nullValue;
 
 /**
 * User: gm
@@ -25,26 +27,85 @@ import static org.hamcrest.core.Is.is;
 public class SynchManagerTest {
     SynchManager syncManager;
 
+    @Test
+    public void testSetUnexistentFolder() throws Exception {
+        syncManager = new FSSynchManager("/someFolder", null);
+
+        MemoryStoryHelper pointStoreA = new MemoryStoryHelper("A");
+        MemoryStoryHelper pointStoreB = new MemoryStoryHelper("B");
+
+        setFolder(pointStoreA, pointStoreB, syncManager.getFolder(pointStoreA));
+        setFolder(pointStoreB, pointStoreA, syncManager.getFolder(pointStoreB));
+
+        checkSynch(pointStoreA);
+        checkSynch(pointStoreB);
+    }
+
+    private void checkSynch(MemoryStoryHelper pointStore){
+        assertThat(pointStore.fsItems.size(), is(8));
+
+        assertThat(pointStore.folderExists("/"), is(true));
+        assertThat(pointStore.folderExists("/fldA"), is(true));
+        assertThat(pointStore.folderExists("/fldB"), is(true));
+
+        assertThat(pointStore.fileExists("/file"), is(true));
+
+        assertThat(pointStore.fileExists("/fldA/fileA"), is(true));
+        assertThat(pointStore.fileExists("/fldA/fileAA"), is(true));
+
+        assertThat(pointStore.fileExists("/fldB/fileB"), is(true));
+        assertThat(pointStore.fileExists("/fldB/fileBB"), is(true));
+
+    }
+        
+    private void setFolder(PointStoreHelper pointStoreFrom, PointStoreHelper pointStoreTo, SynchFolder synchFolder) {
+        Constants.Codes result = syncManager.setFolder(pointStoreTo, synchFolder.getRelativePath());
+
+        //if folder could not be created, no synchronization for this path
+        if (result == Constants.Codes.FATAL_ERROR_CODE){
+            return;
+        }
+        
+        if (synchFolder.getFolders() != null
+                && synchFolder.getFolders().length > 0){
+            
+            for(SynchFolder innerFolder : synchFolder.getFolders()) {
+                setFolder(pointStoreFrom, pointStoreTo, innerFolder);
+            }
+        }
+
+        for(SynchFile innerFile : synchFolder.getFiles()) {
+            switch(syncManager.checkFile(pointStoreTo, innerFile)){
+                case FATAL_ERROR_CODE :
+                    return;
+                case ERROR_CODE :
+                    FileChannel source = pointStoreFrom.getReadChannel(innerFile.getName());
+                    syncManager.setFile(pointStoreTo, innerFile, source);
+            }
+        }
+    }
 
     @Test
-    public void testPathCombine() throws Exception {
+    public void testGetItems() throws Exception {
 
         syncManager = new FSSynchManager("/someFolder", null);
 
-        SynchFolder folder = syncManager.getFolder(new MemoryStoryHelper());
+        SynchFolder folder = syncManager.getFolder(new MemoryStoryHelper("A"));
 
-        //assertThat(folder.getRelativePath(), is("/someFolder"));
-        //assertThat(folder.getFiles().length, is(1));
-        //assertThat(folder.getFiles()[0].getName(), is("/file"));
+        assertThat(folder.getRelativePath(), is("/"));
+        assertThat(folder.getFiles().length, is(1));
+        assertThat(folder.getFiles()[0].getName(), is("/file"));
 
- //       assertThat(folder.getFolders().length, is(1));
-  //      assertThat(folder.getFolders()[0].getRelativePath(), is("/fldA"));
-  //      assertThat(folder.getFolders()[0].getFiles().length, is(2));
+        assertThat(folder.getFolders().length, is(1));
+        assertThat(folder.getFolders()[0].getRelativePath(), is("/fldA"));
+        assertThat(folder.getFolders()[0].getFiles().length, is(2));
 
-   //     String[] arr = new String[] {folder.getFolders()[0].getFiles()[0].getName(),
-  //              folder.getFolders()[0].getFiles()[0].getName()};
-  //      assertThat(arrayContainsItem(arr, "/fldA/fileA"), is(true));
-  //      assertThat(arrayContainsItem(arr, "/fldA/fileAA"), is(true));
+        String[] arr = new String[] {folder.getFolders()[0].getFiles()[0].getName(),
+                folder.getFolders()[0].getFiles()[1].getName()};
+        assertThat(arrayContainsItem(arr, "/fldA/fileA"), is(true));
+        assertThat(arrayContainsItem(arr, "/fldA/fileAA"), is(true));
+
+        assertThat(folder.getFolders()[0].getFolders(), nullValue());
     }
 
 
@@ -56,14 +117,14 @@ public class SynchManagerTest {
     }
     
     private class MemoryStoryHelper implements PointStoreHelper {
-
         private Map<String, Boolean> fsItems = new HashMap<>();
 
-        public MemoryStoryHelper() {
-            fsItems.put("/fldA", true);
+        public MemoryStoryHelper(String folderLetter) {
+            fsItems.put("/", true);
+            fsItems.put("/fld" + folderLetter, true);
             fsItems.put("/file", false);
-            fsItems.put("/fldA/fileA", false);
-            fsItems.put("/fldA/fileAA", false);
+            fsItems.put("/fld" + folderLetter + "/file" + folderLetter, false);
+            fsItems.put("/fld" + folderLetter + "/file" + folderLetter + folderLetter, false);
         }
 
         @Override
@@ -84,6 +145,9 @@ public class SynchManagerTest {
             for(String key: fsItems.keySet() ){
                 int fileDelimiterPos = key.lastIndexOf(Constants.JAVA_PATH_DELIMITER);
                 String folderName = key.substring(0, fileDelimiterPos);
+                if (folderName.equals("")) {
+                    folderName = Constants.JAVA_PATH_DELIMITER + "";
+                }
                 if (!relativePath.equals(folderName)) continue;
 
                 if (!fsItems.get(key).booleanValue()){
@@ -157,7 +221,8 @@ public class SynchManagerTest {
 
         @Override
         public boolean writeChannel(FileChannel source, String writePath) {
-            return false;
+            fsItems.put(writePath, false);
+            return true;
         }
     }
 }

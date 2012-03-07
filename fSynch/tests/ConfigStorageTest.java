@@ -4,14 +4,12 @@ import com.g4share.jSynch.config.XmlNode;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.share.Constants;
 import com.g4share.jSynch.share.PointInfo;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Random;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
