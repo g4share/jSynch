@@ -29,7 +29,7 @@ public class SynchManagerTest {
 
     @Test
     public void testSetUnexistentFolder() throws Exception {
-        syncManager = new FSSynchManager("/someFolder", null);
+        syncManager = new FSSynchManager(null);
 
         MemoryStoryHelper pointStoreA = new MemoryStoryHelper("A");
         MemoryStoryHelper pointStoreB = new MemoryStoryHelper("B");
@@ -88,7 +88,7 @@ public class SynchManagerTest {
     @Test
     public void testGetItems() throws Exception {
 
-        syncManager = new FSSynchManager("/someFolder", null);
+        syncManager = new FSSynchManager(null);
 
         SynchFolder folder = syncManager.getFolder(new MemoryStoryHelper("A"));
 

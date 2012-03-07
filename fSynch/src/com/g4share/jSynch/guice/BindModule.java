@@ -1,8 +1,8 @@
 package com.g4share.jSynch.guice;
 
-import com.g4share.jSynch.log.ConsoleLogger;
-import com.g4share.jSynch.log.FileLogger;
-import com.g4share.jSynch.log.Logger;
+import com.g4share.jSynch.log.*;
+import com.g4share.jSynch.share.FSSynchManager;
+import com.g4share.jSynch.share.SynchManager;
 import com.google.inject.AbstractModule;
 import com.google.inject.Scopes;
 import com.google.inject.assistedinject.FactoryModuleBuilder;
@@ -20,8 +20,17 @@ public class BindModule  extends AbstractModule {
                 .in(Scopes.SINGLETON);
 
         install(new FactoryModuleBuilder()
+                .implement(LoggerProperties.class, FileLoggerProperties.class)
+                .build(FileLoggerPropertiesFactory.class));
+
+        install(new FactoryModuleBuilder()
                 .implement(Logger.class, FileLogger.class)
                 .build(FileLoggerFactory.class));
+
+        install(new FactoryModuleBuilder()
+                .implement(SynchManager.class, FSSynchManager.class)
+                .build(FSSynchManagerFactory.class));
+
     }
 }
 

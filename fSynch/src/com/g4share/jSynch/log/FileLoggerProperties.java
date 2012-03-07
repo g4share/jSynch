@@ -1,5 +1,8 @@
 package com.g4share.jSynch.log;
 
+import com.google.inject.Inject;
+import com.google.inject.assistedinject.Assisted;
+
 /**
  * User: gm
  * Date: 3/3/12
@@ -7,7 +10,8 @@ package com.g4share.jSynch.log;
 public class FileLoggerProperties implements LoggerProperties {
     private String fileName;
 
-    public FileLoggerProperties(String fileName) {
+    @Inject
+    public FileLoggerProperties(@Assisted String fileName) {
         this.fileName = fileName;
     }
 

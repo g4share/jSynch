@@ -2,6 +2,7 @@ package com.g4share.jSynch.log;
 
 import com.g4share.jSynch.guice.DefaultLogger;
 import com.google.inject.Inject;
+import com.google.inject.assistedinject.Assisted;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -18,7 +19,7 @@ public class FileLogger implements Logger {
     private Logger innerLogger;
 
     @Inject
-    public FileLogger(LoggerProperties fileProperties,
+    public FileLogger(@Assisted LoggerProperties fileProperties,
                       @DefaultLogger Logger innerLogger) {
         this.fileProperties = fileProperties;
         this.innerLogger = innerLogger;

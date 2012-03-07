@@ -1,7 +1,9 @@
 package com.g4share.jSynch.share;
 
 import com.g4share.jSynch.log.Logger;
+import com.google.inject.assistedinject.Assisted;
 
+import javax.inject.Inject;
 import java.nio.channels.FileChannel;
 
 /**
@@ -9,12 +11,10 @@ import java.nio.channels.FileChannel;
  * Date: 3/6/12
  */
 public class FSSynchManager implements SynchManager {
-    private String location;
-
     private Logger logger;
 
-    public FSSynchManager(String location, Logger logger) {
-        this.location = location;
+    @Inject
+    public FSSynchManager(@Assisted Logger logger) {
         this.logger = logger;
     }
 
@@ -62,7 +62,7 @@ public class FSSynchManager implements SynchManager {
     @Override
     public Constants.Codes setFolder(PointStoreHelper pointHelper, String relativePath){
         if (!pointHelper.folderExists(Constants.ROOT)){
-            logError("Could not find root folder \""  + location + "\". Please create.", false);
+            logError("Could not find root folder. Please create.", false);
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 
@@ -92,7 +92,7 @@ public class FSSynchManager implements SynchManager {
     @Override
     public Constants.Codes checkFile(PointStoreHelper pointHelper, SynchFile synchFile){
         if (!pointHelper.folderExists(Constants.ROOT)){
-            logError("Could not find root folder \""  + location + "\". Please create.", false);
+            logError("Could not find root folder. Please create.", false);
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 
