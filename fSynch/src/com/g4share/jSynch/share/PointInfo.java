@@ -39,4 +39,5 @@ public class PointInfo {
     public String[] getStorePaths() {
         return  storePaths.toArray(new String[storePaths.size()]);
     }
+
 }

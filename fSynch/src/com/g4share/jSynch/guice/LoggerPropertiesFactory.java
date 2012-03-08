@@ -4,9 +4,9 @@ import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.log.LoggerProperties;
 
 /**
- * User: gm
- * Date: 3/3/12
+ * Date: 3/8/12
+ * Time: 12:38 AM
  */
-public interface FileLoggerFactory {
-    Logger create(LoggerProperties fileProperties);
+public interface LoggerPropertiesFactory {
+    LoggerProperties create(String logPath);
 }

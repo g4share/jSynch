@@ -7,6 +7,6 @@ import com.g4share.jSynch.share.SynchManager;
  * User: gm
  * Date: 3/8/12
  */
-public interface FSSynchManagerFactory {
+public interface SynchManagerFactory {
     SynchManager create(Logger logger);
 }

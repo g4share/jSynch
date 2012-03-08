@@ -44,7 +44,7 @@ public class ConfigStorageTest {
     @Test
     public void testInitialStateIsClear() throws Exception {
         assertThat(store.getInterval(), is(0));
-        assertThat(store.getPoints().size(), is(0));
+        assertThat(store.getPoints().length, is(0));
         assertThat(fatal, is(false));
     }
 
@@ -54,7 +54,7 @@ public class ConfigStorageTest {
         store.AddNode(XmlNode.none, null);
 
         assertThat(store.getInterval(), is(0));
-        assertThat(store.getPoints().size(), is(0));
+        assertThat(store.getPoints().length, is(0));
         assertThat(fatal, is(false));
     }
 
@@ -76,7 +76,7 @@ public class ConfigStorageTest {
         attributes.put(Constants.SECONDS_ATTRIBUTE, "no int value");
         store.AddNode(XmlNode.Interval, attributes);
 
-        assertThat(store.getPoints().size(), is(0));
+        assertThat(store.getPoints().length, is(0));
         assertThat(store.getInterval(), is(Constants.WRONG_NUMBER));
         assertThat(fatal, is(true));
     }
@@ -91,7 +91,7 @@ public class ConfigStorageTest {
         attributes.put(Constants.SECONDS_ATTRIBUTE, "47");
         store.AddNode(XmlNode.Interval, attributes);
 
-        assertThat(store.getPoints().size(), is(0));
+        assertThat(store.getPoints().length, is(0));
         assertThat(store.getInterval(), is(47));
         assertThat(fatal, is(false));
     }
@@ -103,9 +103,9 @@ public class ConfigStorageTest {
         attributes.put(Constants.VALUE_ATTRIBUTE, "pointA pathA");
         store.AddNode(XmlNode.Path, attributes);
 
-        assertThat(store.getPoints().size(), is(1));
+        assertThat(store.getPoints().length, is(1));
 
-        PointInfo pInfoA = store.getPoints().iterator().next();
+        PointInfo pInfoA = store.getPoints()[0];
         assertThat(pInfoA.getName(), is("pointA"));
         assertThat(pInfoA.getStorePaths().length, is(1));
         assertThat(pInfoA.getStorePaths()[0], is("pointA pathA"));
@@ -130,12 +130,12 @@ public class ConfigStorageTest {
         store.AddNode(XmlNode.Path, attributes);
 
 
-        assertThat(store.getPoints().size(), is(2));
+        assertThat(store.getPoints().length, is(2));
 
-        Iterator<PointInfo> iterator = store.getPoints().iterator();
+        PointInfo[] points = store.getPoints();
+
         PointInfo pInfoA = null;
-        while (iterator.hasNext()){
-            PointInfo tInfo = iterator.next();
+        for(PointInfo tInfo : points) {
             if (tInfo.getName().equals("pointA")) {
                 pInfoA = tInfo;
                 break;
@@ -147,15 +147,14 @@ public class ConfigStorageTest {
         assertThat(pInfoA.getStorePaths()[0], is("pointA pathA"));
 
 
-        iterator = store.getPoints().iterator();
         PointInfo pInfoB = null;
-        while (iterator.hasNext()){
-            PointInfo tInfo = iterator.next();
+        for(PointInfo tInfo : points) {
             if (tInfo.getName().equals("pointB")) {
                 pInfoB = tInfo;
                 break;
             }
         }
+
         assertThat(pInfoB.getStorePaths().length, is(2));
         assertThat(pInfoB.getStorePaths()[0], is("pointB pathB"));
         assertThat(pInfoB.getStorePaths()[1], is("pointB pathBB"));

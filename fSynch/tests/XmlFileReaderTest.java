@@ -44,7 +44,7 @@ public class XmlFileReaderTest {
     public void setUp() throws IOException {
         points = new TreeMap<>();
         tFileName = folder.getRoot().getAbsolutePath() + "/config";
-        createFile(tFileName);
+        CommonTestMethods.createConfigFile(tFileName);
         
         xmlReader = new XmlFileReader();
 
@@ -53,11 +53,11 @@ public class XmlFileReaderTest {
             public void AddNode(XmlNode node, Map<String, String> attributes) {
                 switch(node){
                     case Interval:
-                        intervalRaw = GetValue(attributes, Constants.SECONDS_ATTRIBUTE);
+                        intervalRaw = CommonTestMethods.GetValue(attributes, Constants.SECONDS_ATTRIBUTE);
                         break;
                     case Path:
-                        points.put(GetValue(attributes, Constants.NAME_ATTRIBUTE),
-                                GetValue(attributes, Constants.VALUE_ATTRIBUTE));
+                        points.put(CommonTestMethods.GetValue(attributes, Constants.NAME_ATTRIBUTE),
+                                CommonTestMethods.GetValue(attributes, Constants.VALUE_ATTRIBUTE));
                 }
 
                 error = null;
@@ -74,7 +74,7 @@ public class XmlFileReaderTest {
             }
 
             @Override
-            public Set<PointInfo> getPoints() {
+            public PointInfo[] getPoints() {
                 throw new NotImplementedException();
             }
         });
@@ -96,7 +96,7 @@ public class XmlFileReaderTest {
     public void testReadNonXmlFile() throws Exception {
         assertThat(error, nullValue());
         //duplicate the text ie file is not more a valid xml one
-        createFile(tFileName);
+        CommonTestMethods.createConfigFile(tFileName);
 
         Constants.Codes result = xmlReader.read(tFileName);
         assertThat(result, is(Constants.Codes.FATAL_ERROR_CODE));
@@ -119,30 +119,5 @@ public class XmlFileReaderTest {
         assertThat(points.get("sh2_"), is("/synch4/"));
 
         assertThat(error, nullValue());
-    }
-    
-    private void createFile(String tFileName) throws IOException {
-        try (PrintWriter writer = new PrintWriter(new FileWriter(tFileName, true))) {
-            writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-            writer.println("<root>");
-            writer.println("    <interval seconds = \"*\"/>");
-            writer.println("    <SynchronisedPaths>");
-            writer.println("        <path name = \"sh1\" value = \"/synch1/\"/>");
-            writer.println("        <path name = \"sh1_\" value = \"/synch2/\"/>");
-
-            writer.println("        <path name = \"sh2\" value = \"/synch3/\"/>");
-            writer.println("        <path name = \"sh2_\" value = \"/synch4/\"/>");
-            writer.println("    </SynchronisedPaths>");
-            writer.println("</root>");
-        } catch (IOException e){ throw e;}
-    }
-
-    private String GetValue(Map<String, String> map, String key) {
-        for (Map.Entry<String, String> mapEntry : map.entrySet()) {
-            if(mapEntry.getKey().equalsIgnoreCase(key)){
-                return mapEntry.getValue();
-            }
-        }
-        return null;
     }
 }

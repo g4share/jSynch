@@ -7,9 +7,7 @@ import com.g4share.jSynch.share.PointInfo;
 import com.google.inject.assistedinject.Assisted;
 
 import javax.inject.Inject;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 /**
  * User: gm
@@ -32,7 +30,7 @@ public class XmlConfigReader implements ConfigReader {
         if (result == null) return null;
 
         int interval = xmlReader.getStore().getInterval();
-        Set<PointInfo> points = xmlReader.getStore().getPoints();
+        PointInfo[] points = xmlReader.getStore().getPoints();
 
         switch (interval){
             case 0:
@@ -47,7 +45,7 @@ public class XmlConfigReader implements ConfigReader {
                 return null;
         }
 
-        if (points.isEmpty()) {
+        if (points.length == 0) {
             if (logger != null) {
                 logger.logFatal("There are no points to be synchronized.");
             }
@@ -56,17 +54,18 @@ public class XmlConfigReader implements ConfigReader {
         }
 
         //remove wrong points
-        for (Iterator<PointInfo> iter = points.iterator(); iter.hasNext(); ) {
-            PointInfo info = iter.next();
+        Set<PointInfo> pointInfo = new HashSet<>();
+        for(PointInfo info : points){
             if (info == null || info.getStorePaths().length < 2){
                 if (logger != null) {
                     logger.logError("Point \"" + info.getName() +  "\" removed. It should be at least 2 points to be synchronized.");
                 }
-                iter.remove();
+                continue;
             }
+            pointInfo.add(info);
         }
 
-        if (points.isEmpty()) {
+        if (pointInfo.isEmpty()) {
             if (logger != null) {
                 logger.logFatal("There are no points to be synchronized.");
             }
@@ -77,7 +76,7 @@ public class XmlConfigReader implements ConfigReader {
         interval *= 1000;
 
         ConfigInfo config = new ConfigInfo(interval,
-                points.toArray(new PointInfo[points.size()]));
+                pointInfo.toArray(new PointInfo[pointInfo.size()]));
 
         points = null;
         return config;

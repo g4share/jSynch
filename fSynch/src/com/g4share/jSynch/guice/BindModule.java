@@ -1,5 +1,9 @@
 package com.g4share.jSynch.guice;
 
+import com.g4share.jSynch.config.ConfigStorage;
+import com.g4share.jSynch.config.ConfigStore;
+import com.g4share.jSynch.config.XmlFileReader;
+import com.g4share.jSynch.config.XmlReader;
 import com.g4share.jSynch.log.*;
 import com.g4share.jSynch.share.FSSynchManager;
 import com.g4share.jSynch.share.SynchManager;
@@ -21,15 +25,26 @@ public class BindModule  extends AbstractModule {
 
         install(new FactoryModuleBuilder()
                 .implement(LoggerProperties.class, FileLoggerProperties.class)
-                .build(FileLoggerPropertiesFactory.class));
+                .build(LoggerPropertiesFactory.class));
 
         install(new FactoryModuleBuilder()
                 .implement(Logger.class, FileLogger.class)
-                .build(FileLoggerFactory.class));
+                .build(LoggerFactory.class));
 
         install(new FactoryModuleBuilder()
                 .implement(SynchManager.class, FSSynchManager.class)
-                .build(FSSynchManagerFactory.class));
+                .build(SynchManagerFactory.class));
+
+
+        install(new FactoryModuleBuilder()
+                .implement(ConfigStore.class, ConfigStorage.class)
+                .build(ConfigStoreFactory.class));
+
+        install(new FactoryModuleBuilder()
+                .implement(XmlReader.class, XmlFileReader.class)
+                .build(XmlReaderFactory.class));
+
+
 
     }
 }

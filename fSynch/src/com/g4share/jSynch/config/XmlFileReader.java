@@ -2,6 +2,7 @@ package com.g4share.jSynch.config;
 
 import com.g4share.jSynch.share.Constants;
 import com.google.inject.Inject;
+import com.google.inject.assistedinject.Assisted;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -23,7 +24,7 @@ public class XmlFileReader implements XmlReader{
 
     @Override
     @Inject
-    public void setStore(ConfigStore configStore){
+    public void setStore(@Assisted ConfigStore configStore){
         this.store = configStore;
     }
 

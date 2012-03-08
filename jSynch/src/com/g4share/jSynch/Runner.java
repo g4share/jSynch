@@ -1,10 +1,13 @@
 package com.g4share.jSynch;
 
+import com.g4share.jSynch.config.ConfigStore;
+import com.g4share.jSynch.config.XmlReader;
 import com.g4share.jSynch.guice.*;
 import com.g4share.jSynch.log.FileLoggerProperties;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.log.LoggerProperties;
 import com.g4share.jSynch.share.Constants;
+import com.g4share.jSynch.share.PointInfo;
 import com.g4share.jSynch.share.SynchManager;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -35,15 +38,27 @@ public class Runner {
             System.exit(1);
         }
 
-        String configPath = "aa";//FSHelper.combine(currentPath, "config.xml");
+        LoggerPropertiesFactory loggerPropertiesFactory = injector.getInstance(LoggerPropertiesFactory.class);
+        LoggerFactory loggerFactory = injector.getInstance(LoggerFactory.class);
+        Logger fileLogger = loggerFactory.create(loggerPropertiesFactory.create(currentPath + "/log"));
 
-        FileLoggerPropertiesFactory fileLoggerPropertiesFactory = injector.getInstance(FileLoggerPropertiesFactory.class);
-        FileLoggerFactory fileLoggerFactory = injector.getInstance(FileLoggerFactory.class);
-        Logger fileLogger = fileLoggerFactory.create(fileLoggerPropertiesFactory.create(configPath));
+        SynchManagerFactory synchManagerFactory = injector.getInstance(SynchManagerFactory.class);
+        SynchManager synchManager = synchManagerFactory.create(fileLogger);
 
-        FSSynchManagerFactory fsSynchManagerFactory = injector.getInstance(FSSynchManagerFactory.class);
-        SynchManager synchManager = fsSynchManagerFactory.create(fileLogger);
+        ConfigStoreFactory  configStoreFactory = injector.getInstance(ConfigStoreFactory.class);
+        ConfigStore configStore = configStoreFactory.create(fileLogger);
 
+        XmlReaderFactory readerFactory = injector.getInstance(XmlReaderFactory.class) ;
+        XmlReader xmlReader = readerFactory.create(configStore);
+        Constants.Codes configReadCode = xmlReader.read(currentPath + "/config.xml");
+
+        Synch(configStore.getPoints());
+    }
+
+    private static void Synch(PointInfo[] configs) {
+        for (PointInfo config : configs) {
+
+        }
     }
 
     private static String getJarLocation() {
@@ -63,7 +78,10 @@ public class Runner {
         }
 
         String jarPath = uri.getPath();
-        return jarPath.substring(0, jarPath.lastIndexOf(Constants.JAVA_PATH_DELIMITER));
+        return "/E:/gitStore/jSynch/config";
+
+
+        //return jarPath.substring(0, jarPath.lastIndexOf(Constants.JAVA_PATH_DELIMITER));
     }
 
 }

@@ -102,19 +102,12 @@ public class SynchManagerTest {
 
         String[] arr = new String[] {folder.getFolders()[0].getFiles()[0].getName(),
                 folder.getFolders()[0].getFiles()[1].getName()};
-        assertThat(arrayContainsItem(arr, "/fldA/fileA"), is(true));
-        assertThat(arrayContainsItem(arr, "/fldA/fileAA"), is(true));
+        assertThat(CommonTestMethods.arrayContainsItem(arr, "/fldA/fileA"), is(true));
+        assertThat(CommonTestMethods.arrayContainsItem(arr, "/fldA/fileAA"), is(true));
 
         assertThat(folder.getFolders()[0].getFolders(), nullValue());
     }
 
-
-    private boolean arrayContainsItem(String[] array, String item2Find){
-        for(String item : array){
-            if (item.equals(item2Find)) return true;
-        }
-        return false;
-    }
     
     private class MemoryStoryHelper implements PointStoreHelper {
         private Map<String, Boolean> fsItems = new HashMap<>();

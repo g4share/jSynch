@@ -65,7 +65,7 @@ public class FileFSHelperTest {
         boolean fileExists = storeHelper.fileExists(fn);
         assertThat(fileExists, is(false));
 
-        createFile(tPathName + "/" + fn);
+        CommonTestMethods.createFile(tPathName + "/" + fn);
         fileExists = storeHelper.fileExists(fn);
         assertThat(fileExists, is(true));
     }
@@ -101,7 +101,7 @@ public class FileFSHelperTest {
         boolean folderExists = storeHelper.folderExists(fn);
         assertThat(folderExists, is(false));
 
-        createFile(tPathName + "/" + fn);
+        CommonTestMethods.createFile(tPathName + "/" + fn);
 
         fileExists = storeHelper.fileExists(fn);
         assertThat(fileExists, is(true));
@@ -130,7 +130,7 @@ public class FileFSHelperTest {
     @Test
     public void testFileSize() throws Exception {
         String fn = "file";
-        createFile(tPathName + "/" + fn);
+        CommonTestMethods.createFile(tPathName + "/" + fn);
         long fileSize = storeHelper.getSize(fn);
         assertThat(fileSize, is(5L));
     }
@@ -138,8 +138,8 @@ public class FileFSHelperTest {
     @Test
     public void testFileContent() throws Exception {
         String fn = "file";
-        createFile(tPathName + "/" + fn);
-        String content = readFileAsString(tPathName + "/" + fn);
+        CommonTestMethods.createFile(tPathName + "/" + fn);
+        String content = CommonTestMethods.readFileAsString(tPathName + "/" + fn);
 
         assertThat(content, is("12345"));
     }
@@ -162,8 +162,8 @@ public class FileFSHelperTest {
 
     @Test
     public void testFullList() throws Exception {
-        createFile(tPathName + "/rootFile1");
-        createFile(tPathName + "/rootFile2");
+        CommonTestMethods.createFile(tPathName + "/rootFile1");
+        CommonTestMethods.createFile(tPathName + "/rootFile2");
 
         String[] files = storeHelper.getFiles("/");
         String[] folders = storeHelper.getFolders("/");
@@ -171,17 +171,17 @@ public class FileFSHelperTest {
         assertThat(files.length, is(2));
         assertThat(folders, nullValue());
         
-        boolean found = arrayContainsItem(files, "rootFile1");
+        boolean found = CommonTestMethods.arrayContainsItem(files, "rootFile1");
         assertThat(found, is(true));
 
-        found = arrayContainsItem(files, "rootFile2");
+        found = CommonTestMethods.arrayContainsItem(files, "rootFile2");
         assertThat(found, is(true));
     }
 
     @Test
     public void testCustomPathList() throws Exception {
         storeHelper.folderCreate("2levelFolder");
-        createFile(tPathName + "/2levelFolder/2levelFile");
+        CommonTestMethods.createFile(tPathName + "/2levelFolder/2levelFile");
 
         String[] folders = storeHelper.getFolders("");
         String[] files = storeHelper.getFiles("2levelFolder");
@@ -189,10 +189,10 @@ public class FileFSHelperTest {
         assertThat(files.length, is(1));
         assertThat(folders.length, is(1));
 
-        boolean found = arrayContainsItem(files, "2levelFile");
+        boolean found = CommonTestMethods.arrayContainsItem(files, "2levelFile");
         assertThat(found, is(true));
 
-        found = arrayContainsItem(folders, "2levelFolder");
+        found = CommonTestMethods.arrayContainsItem(folders, "2levelFolder");
         assertThat(found, is(true));
     }
 
@@ -201,8 +201,8 @@ public class FileFSHelperTest {
         String fn = "file";
         storeHelper.folderCreate("folder");
 
-        createFile(tPathName + "/" + fn);
-        String contentFrom = readFileAsString(tPathName + "/" + fn);
+        CommonTestMethods.createFile(tPathName + "/" + fn);
+        String contentFrom = CommonTestMethods.readFileAsString(tPathName + "/" + fn);
 
         FileChannel source = null;
         try{
@@ -212,29 +212,7 @@ public class FileFSHelperTest {
             if (source != null) source.close();
         }
 
-        String contentTo = readFileAsString(tPathName + "/folder/copy");
+        String contentTo = CommonTestMethods.readFileAsString(tPathName + "/folder/copy");
         assertThat(contentTo, is(contentFrom));
-    }
-
-
-    private boolean arrayContainsItem(String[] array, String item2Find){
-        for(String item : array){
-            if (item.equals(item2Find)) return true;
-        }
-        return false;
-    }
-
-    private void createFile(String tFileName) throws IOException {
-        try (PrintWriter writer = new PrintWriter(new FileWriter(tFileName, true))) {
-            writer.print("12345");
-        } catch (IOException e){ throw e;}
-    }
-
-    private static String readFileAsString(String filePath) throws java.io.IOException{
-        byte[] buffer = new byte[(int) new File(filePath).length()];
-        try(BufferedInputStream f = new BufferedInputStream(new FileInputStream(filePath))) {
-            f.read(buffer);
-        }
-        return new String(buffer);
     }
 }

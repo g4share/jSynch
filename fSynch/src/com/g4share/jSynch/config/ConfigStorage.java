@@ -37,8 +37,8 @@ public class ConfigStorage implements ConfigStore {
     }
 
     @Override
-    public Set<PointInfo> getPoints() {
-        return points;
+    public PointInfo[] getPoints() {
+        return points.toArray(new PointInfo[points.size()]);
     }
 
 

@@ -53,7 +53,7 @@ public class FileLoggerTest {
         Logger logger = new FileLogger(properties, null);
         logger.logEvent(text);
 
-        String line = getLine(properties.getFileName(), 0);
+        String line = CommonTestMethods.getLine(properties.getFileName(), 0);
         assertThat(line, endsWith(text));
     }
 
@@ -64,7 +64,7 @@ public class FileLoggerTest {
         Logger logger = new FileLogger(properties, null);
         logger.logError(text);
 
-        String line = getLine(properties.getFileName(), 0);
+        String line = CommonTestMethods.getLine(properties.getFileName(), 0);
         assertThat(line, startsWith("* "));
         assertThat(line, endsWith(text));
     }
@@ -76,21 +76,8 @@ public class FileLoggerTest {
         Logger logger = new FileLogger(properties, null);
         logger.logFatal(text);
 
-        String line = getLine(properties.getFileName(), 0);
+        String line = CommonTestMethods.getLine(properties.getFileName(), 0);
         assertThat(line, startsWith("! "));
         assertThat(line, endsWith(text));
-    }
-
-    private String getLine(String fileName, int lineNumber) throws Exception{
-        int currentLineNumber = 0;
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(new DataInputStream(new FileInputStream(fileName))))) {
-            String line;
-            while ((line = br.readLine()) != null)   {
-                if (currentLineNumber++ == lineNumber) return line;
-                return line;
-            }
-
-        };
-        throw new Exception("Could not find the line " + lineNumber);
     }
 }

@@ -14,5 +14,5 @@ public interface ConfigStore {
     void ErrorOccurred(String hint);
 
     int getInterval();
-    Set<PointInfo> getPoints();
+    PointInfo[] getPoints();
 }
