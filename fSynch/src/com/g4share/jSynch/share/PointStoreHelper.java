@@ -20,5 +20,5 @@ public interface PointStoreHelper {
     String combine(String... paths);
 
     FileChannel getReadChannel(String pathRead);
-    public boolean writeChannel(FileChannel source, String writePath);
+    boolean writeChannel(FileChannel source, String writePath);
 }

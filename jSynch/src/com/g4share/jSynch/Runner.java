@@ -6,9 +6,7 @@ import com.g4share.jSynch.guice.*;
 import com.g4share.jSynch.log.FileLoggerProperties;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.log.LoggerProperties;
-import com.g4share.jSynch.share.Constants;
-import com.g4share.jSynch.share.PointInfo;
-import com.g4share.jSynch.share.SynchManager;
+import com.g4share.jSynch.share.*;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Key;
@@ -17,6 +15,7 @@ import com.google.inject.assistedinject.FactoryModuleBuilder;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.channels.FileChannel;
 import java.security.CodeSource;
 import java.security.ProtectionDomain;
 
@@ -51,16 +50,64 @@ public class Runner {
         XmlReaderFactory readerFactory = injector.getInstance(XmlReaderFactory.class) ;
         XmlReader xmlReader = readerFactory.create(configStore);
         Constants.Codes configReadCode = xmlReader.read(currentPath + "/config.xml");
+        if (configReadCode != Constants.Codes.SUCCESS_CODE){
+            fileLogger.logFatal("Could not read configuration. Exit.");
+            System.exit(1);
+        }
 
-        Synch(configStore.getPoints());
+        PointStoreHelperFactory pointStoreHelperFactory = injector.getInstance(PointStoreHelperFactory.class);
+        Synch(pointStoreHelperFactory, synchManager, configStore.getPoints());
     }
 
-    private static void Synch(PointInfo[] configs) {
-        for (PointInfo config : configs) {
+    private static void Synch(PointStoreHelperFactory pointStoreHelperFactory,
+                              SynchManager synchManager,
+                              PointInfo[] configs) {
 
+        for (PointInfo config : configs) {
+            for (final String pathFrom : config.getStorePaths()){
+                for (final String pathTo : config.getStorePaths()){
+                    if (pathFrom.equals(pathTo)) continue; // do not synch the same folder in the point
+
+                    PointStoreHelper pointStoreFrom = pointStoreHelperFactory.create(pathFrom);
+                    PointStoreHelper pointStoreTo = pointStoreHelperFactory.create(pathTo);
+
+                    SynchFolder folderFrom = synchManager.getFolder(pointStoreFrom);
+                    setFolder(synchManager, pointStoreFrom, pointStoreTo, folderFrom);
+                }
+            }
         }
     }
 
+    static private void setFolder(SynchManager synchManager,
+                                  PointStoreHelper pointStoreFrom,
+                                  PointStoreHelper pointStoreTo,
+                                  SynchFolder synchFolder) {
+
+        Constants.Codes result = synchManager.setFolder(pointStoreTo, synchFolder.getRelativePath());
+
+        //if folder could not be created, no synchronization for this path
+        if (result == Constants.Codes.FATAL_ERROR_CODE){
+            return;
+        }
+
+        if (synchFolder.getFolders() != null
+                && synchFolder.getFolders().length > 0){
+
+            for(SynchFolder innerFolder : synchFolder.getFolders()) {
+                setFolder(synchManager, pointStoreFrom, pointStoreTo, innerFolder);
+            }
+        }
+
+        for(SynchFile innerFile : synchFolder.getFiles()) {
+            switch(synchManager.checkFile(pointStoreTo, innerFile)){
+                case FATAL_ERROR_CODE :
+                    return;
+                case ERROR_CODE :
+                    FileChannel source = pointStoreFrom.getReadChannel(innerFile.getName());
+                    synchManager.setFile(pointStoreTo, innerFile, source);
+            }
+        }
+    }
     private static String getJarLocation() {
         final ProtectionDomain domain;
         final CodeSource source;
@@ -83,5 +130,4 @@ public class Runner {
 
         //return jarPath.substring(0, jarPath.lastIndexOf(Constants.JAVA_PATH_DELIMITER));
     }
-
 }

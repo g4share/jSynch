@@ -1,5 +1,8 @@
 package com.g4share.jSynch.share;
 
+import com.google.inject.Inject;
+import com.google.inject.assistedinject.Assisted;
+
 import java.io.*;
 import java.nio.channels.FileChannel;
 import java.util.HashSet;
@@ -12,7 +15,8 @@ import java.util.Set;
 public class FileFSHelper implements PointStoreHelper{
     private String path;
 
-    public FileFSHelper(String path) {
+    @Inject
+    public FileFSHelper(@Assisted String path) {
         this.path = path;
     }
 

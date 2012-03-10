@@ -25,17 +25,17 @@ import static org.hamcrest.core.IsNull.nullValue;
 * Date: 3/6/12
 */
 public class SynchManagerTest {
-    SynchManager syncManager;
+    SynchManager synchManager;
 
     @Test
     public void testSetUnexistentFolder() throws Exception {
-        syncManager = new FSSynchManager(null);
+        synchManager = new FSSynchManager(null);
 
         MemoryStoryHelper pointStoreA = new MemoryStoryHelper("A");
         MemoryStoryHelper pointStoreB = new MemoryStoryHelper("B");
 
-        setFolder(pointStoreA, pointStoreB, syncManager.getFolder(pointStoreA));
-        setFolder(pointStoreB, pointStoreA, syncManager.getFolder(pointStoreB));
+        setFolder(pointStoreA, pointStoreB, synchManager.getFolder(pointStoreA));
+        setFolder(pointStoreB, pointStoreA, synchManager.getFolder(pointStoreB));
 
         checkSynch(pointStoreA);
         checkSynch(pointStoreB);
@@ -59,7 +59,7 @@ public class SynchManagerTest {
     }
         
     private void setFolder(PointStoreHelper pointStoreFrom, PointStoreHelper pointStoreTo, SynchFolder synchFolder) {
-        Constants.Codes result = syncManager.setFolder(pointStoreTo, synchFolder.getRelativePath());
+        Constants.Codes result = synchManager.setFolder(pointStoreTo, synchFolder.getRelativePath());
 
         //if folder could not be created, no synchronization for this path
         if (result == Constants.Codes.FATAL_ERROR_CODE){
@@ -75,12 +75,12 @@ public class SynchManagerTest {
         }
 
         for(SynchFile innerFile : synchFolder.getFiles()) {
-            switch(syncManager.checkFile(pointStoreTo, innerFile)){
+            switch(synchManager.checkFile(pointStoreTo, innerFile)){
                 case FATAL_ERROR_CODE :
                     return;
                 case ERROR_CODE :
                     FileChannel source = pointStoreFrom.getReadChannel(innerFile.getName());
-                    syncManager.setFile(pointStoreTo, innerFile, source);
+                    synchManager.setFile(pointStoreTo, innerFile, source);
             }
         }
     }
@@ -88,9 +88,9 @@ public class SynchManagerTest {
     @Test
     public void testGetItems() throws Exception {
 
-        syncManager = new FSSynchManager(null);
+        synchManager = new FSSynchManager(null);
 
-        SynchFolder folder = syncManager.getFolder(new MemoryStoryHelper("A"));
+        SynchFolder folder = synchManager.getFolder(new MemoryStoryHelper("A"));
 
         assertThat(folder.getRelativePath(), is("/"));
         assertThat(folder.getFiles().length, is(1));

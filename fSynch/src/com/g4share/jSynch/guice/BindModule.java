@@ -6,6 +6,8 @@ import com.g4share.jSynch.config.XmlFileReader;
 import com.g4share.jSynch.config.XmlReader;
 import com.g4share.jSynch.log.*;
 import com.g4share.jSynch.share.FSSynchManager;
+import com.g4share.jSynch.share.FileFSHelper;
+import com.g4share.jSynch.share.PointStoreHelper;
 import com.g4share.jSynch.share.SynchManager;
 import com.google.inject.AbstractModule;
 import com.google.inject.Scopes;
@@ -44,7 +46,9 @@ public class BindModule  extends AbstractModule {
                 .implement(XmlReader.class, XmlFileReader.class)
                 .build(XmlReaderFactory.class));
 
-
+        install(new FactoryModuleBuilder()
+                .implement(PointStoreHelper.class, FileFSHelper.class)
+                .build(PointStoreHelperFactory.class));
 
     }
 }
