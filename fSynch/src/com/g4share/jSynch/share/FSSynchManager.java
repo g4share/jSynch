@@ -1,5 +1,6 @@
 package com.g4share.jSynch.share;
 
+import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
 import com.google.inject.assistedinject.Assisted;
 
@@ -39,7 +40,8 @@ public class FSSynchManager implements SynchManager {
 
             for(int i = 0; i < folders.length; i++) {
                 //and load folder info
-                synchFolders[i] = getFolder(pointHelper, pointHelper.combine(relativePath,  folders[i]));
+                //synchFolders[i] = getFolder(pointHelper, pointHelper.combine(relativePath,  folders[i]));
+                synchFolders[i] = getFolder(pointHelper, folders[i]);
             }
         }
 
@@ -62,13 +64,13 @@ public class FSSynchManager implements SynchManager {
     @Override
     public Constants.Codes setFolder(PointStoreHelper pointHelper, String relativePath){
         if (!pointHelper.folderExists(Constants.ROOT)){
-            logError("Could not find root folder. Please create.", false);
+            logEvent(LogLevel.FATAL, "Could not find root folder. Please create.");
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 
         if (pointHelper.fileExists(relativePath)){
-            logError("Could not create \""  + relativePath
-                    + "\" folder because there is a file at this location.", false);
+            logEvent(LogLevel.ERROR, "Could not create \""  + relativePath
+                    + "\" folder because there is a file at this location.");
 
             return Constants.Codes.FATAL_ERROR_CODE;
         }
@@ -81,18 +83,18 @@ public class FSSynchManager implements SynchManager {
         pointHelper.folderCreate(relativePath);
 
         if (!pointHelper.folderExists(relativePath)){
-            logError("Could not create \""  + relativePath + "\" folder.", false);
+            logEvent(LogLevel.ERROR, "Could not create \""  + relativePath + "\" folder.");
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 
-        logEvent("Folder \"" + relativePath + "\" has been created.");
+        logEvent(LogLevel.TRACE, "Folder \"" + relativePath + "\" has been created.");
         return Constants.Codes.SUCCESS_CODE;
     }
 
     @Override
     public Constants.Codes checkFile(PointStoreHelper pointHelper, SynchFile synchFile){
         if (!pointHelper.folderExists(Constants.ROOT)){
-            logError("Could not find root folder. Please create.", false);
+            logEvent(LogLevel.ERROR, "Could not find root folder. Please create.");
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 
@@ -101,15 +103,15 @@ public class FSSynchManager implements SynchManager {
         }
 
         if (pointHelper.folderExists(synchFile.getName())){
-            logError("Could not create \""  + synchFile.getName()
-                    + "\" file because there is a folder at this location.", false);
+            logEvent(LogLevel.ERROR, "Could not create \""  + synchFile.getName()
+                    + "\" file because there is a folder at this location.");
 
             return Constants.Codes.SUCCESS_CODE;
         }
 
         long localSize = pointHelper.getSize(synchFile.getName());
         if (localSize != synchFile.getSize()){
-            logger.logFatal("conflict for \"" + synchFile.getSize()
+            logEvent(LogLevel.FATAL, "conflict for \"" + synchFile.getSize()
                     + "\" file (" + synchFile.getSize() + " - > " + localSize + ").");
         }
 
@@ -121,18 +123,17 @@ public class FSSynchManager implements SynchManager {
         if (checkFile(pointHelper, synchFile) != Constants.Codes.ERROR_CODE){
             return;
         }
-        pointHelper.writeChannel(source, synchFile.getName());
+        boolean synchronised = pointHelper.writeChannel(source, synchFile.getName());
+        if (synchronised) {
+            logEvent(LogLevel.INFO, "File " + synchFile.getName() + " synchronised.");
+        } else {
+            logEvent(LogLevel.ERROR, "Could not synchronise file " + synchFile.getName() + ".");
+        }
     }
 
 
-    private void logEvent(String message){
+    private void logEvent(LogLevel level, String message){
         if (logger == null) return;
-        logger.logEvent(message);
-    }
-
-    private void logError(String exception, boolean isFatal){
-        if (logger == null) return;
-        if (isFatal) logger.logFatal(exception);
-        logger.logError(exception);
+        logger.logEvent(level, message);
     }
 }

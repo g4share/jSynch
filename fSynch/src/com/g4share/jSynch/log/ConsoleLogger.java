@@ -5,18 +5,18 @@ package com.g4share.jSynch.log;
  * Date: 3/3/12
  */
 public class ConsoleLogger implements Logger {
+    private LogLevel currentLevel;
+
     @Override
-    public void logEvent(String message) {
-        System.out.println(message);
+    public void logEvent(LogLevel level, String message) {
+        if (currentLevel == null || level == null) return;
+        if (level.isHighest(currentLevel)){
+            System.out.println(level.getDescription() + " " + message);
+        }
     }
 
     @Override
-    public void logError(String exception) {
-        System.out.println(exception);
-    }
-
-    @Override
-    public void logFatal(String exception) {
-        System.out.println("Fatal error: " + exception);
+    public void setLevel(LogLevel level) {
+        this.currentLevel = level;
     }
 }

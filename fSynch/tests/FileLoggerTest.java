@@ -1,4 +1,5 @@
 import com.g4share.jSynch.log.FileLogger;
+import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.log.LoggerProperties;
 import org.junit.After;
@@ -41,7 +42,8 @@ public class FileLoggerTest {
     @Test
     public void create_New_Log() {
         Logger logger = new FileLogger(properties, null);
-        logger.logEvent("it happens...");
+        logger.setLevel(LogLevel.TRACE);
+        logger.logEvent(LogLevel.INFO, "it happens...");
         File logFile = new File(properties.getFileName());
         assertThat(logFile.exists(), is(true));
     }
@@ -51,7 +53,8 @@ public class FileLoggerTest {
         String text = "it happens...";
 
         Logger logger = new FileLogger(properties, null);
-        logger.logEvent(text);
+        logger.setLevel(LogLevel.TRACE);
+        logger.logEvent(LogLevel.INFO, text);
 
         String line = CommonTestMethods.getLine(properties.getFileName(), 0);
         assertThat(line, endsWith(text));
@@ -62,7 +65,8 @@ public class FileLoggerTest {
         String text = "it happens...";
 
         Logger logger = new FileLogger(properties, null);
-        logger.logError(text);
+        logger.setLevel(LogLevel.TRACE);
+        logger.logEvent(LogLevel.ERROR, text);
 
         String line = CommonTestMethods.getLine(properties.getFileName(), 0);
         assertThat(line, startsWith("* "));
@@ -74,7 +78,8 @@ public class FileLoggerTest {
         String text = "it happens...";
 
         Logger logger = new FileLogger(properties, null);
-        logger.logFatal(text);
+        logger.setLevel(LogLevel.TRACE);
+        logger.logEvent(LogLevel.FATAL, text);
 
         String line = CommonTestMethods.getLine(properties.getFileName(), 0);
         assertThat(line, startsWith("! "));

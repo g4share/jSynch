@@ -1,6 +1,7 @@
 import com.g4share.jSynch.config.ConfigStorage;
 import com.g4share.jSynch.config.ConfigStore;
 import com.g4share.jSynch.config.XmlNode;
+import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.share.Constants;
 import com.g4share.jSynch.share.PointInfo;
@@ -8,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -26,15 +26,16 @@ public class ConfigStorageTest {
     @Before
     public void setUp() throws Exception {
         store = new ConfigStorage(new Logger() {
-            @Override
-            public void logEvent(String message) {}
+            LogLevel level;
 
             @Override
-            public void logError(String exception) {}
+            public void setLevel(LogLevel level) {
+                this.level = level;;
+            }
 
             @Override
-            public void logFatal(String exception) {
-                 fatal = true;
+            public void logEvent(LogLevel level, String message) {
+                if (level == LogLevel.FATAL) fatal = true;
             }
         });
 
@@ -51,7 +52,7 @@ public class ConfigStorageTest {
     @Test
     public void testWrongNodeAdded() throws Exception {
         assertThat(store.getInterval(), is(0));
-        store.AddNode(XmlNode.none, null);
+        store.AddNode(XmlNode.NONE, null);
 
         assertThat(store.getInterval(), is(0));
         assertThat(store.getPoints().length, is(0));
@@ -62,7 +63,7 @@ public class ConfigStorageTest {
     public void testInconsistentIntervalAdded() throws Exception {
         assertThat(store.getInterval(), is(0));
         assertThat(fatal, is(false));
-        store.AddNode(XmlNode.Interval, null);
+        store.AddNode(XmlNode.INTERVAL, null);
         assertThat(store.getInterval(), is(Constants.WRONG_NUMBER));
         assertThat(fatal, is(true));
     }
@@ -74,7 +75,7 @@ public class ConfigStorageTest {
 
         Map<String, String> attributes = new HashMap<>();
         attributes.put(Constants.SECONDS_ATTRIBUTE, "no int value");
-        store.AddNode(XmlNode.Interval, attributes);
+        store.AddNode(XmlNode.INTERVAL, attributes);
 
         assertThat(store.getPoints().length, is(0));
         assertThat(store.getInterval(), is(Constants.WRONG_NUMBER));
@@ -89,7 +90,7 @@ public class ConfigStorageTest {
         Map<String, String> attributes = new HashMap<>();
 
         attributes.put(Constants.SECONDS_ATTRIBUTE, "47");
-        store.AddNode(XmlNode.Interval, attributes);
+        store.AddNode(XmlNode.INTERVAL, attributes);
 
         assertThat(store.getPoints().length, is(0));
         assertThat(store.getInterval(), is(47));
@@ -101,7 +102,7 @@ public class ConfigStorageTest {
         Map<String, String> attributes = new HashMap<>();
         attributes.put(Constants.NAME_ATTRIBUTE, "pointA");
         attributes.put(Constants.VALUE_ATTRIBUTE, "pointA pathA");
-        store.AddNode(XmlNode.Path, attributes);
+        store.AddNode(XmlNode.PATH, attributes);
 
         assertThat(store.getPoints().length, is(1));
 
@@ -117,17 +118,17 @@ public class ConfigStorageTest {
         Map<String, String> attributes = new HashMap<>();
         attributes.put(Constants.NAME_ATTRIBUTE, "pointA");
         attributes.put(Constants.VALUE_ATTRIBUTE, "pointA pathA");
-        store.AddNode(XmlNode.Path, attributes);
+        store.AddNode(XmlNode.PATH, attributes);
 
         attributes.clear();
         attributes.put(Constants.NAME_ATTRIBUTE, "pointB");
         attributes.put(Constants.VALUE_ATTRIBUTE, "pointB pathB");
-        store.AddNode(XmlNode.Path, attributes);
+        store.AddNode(XmlNode.PATH, attributes);
 
         attributes.clear();
         attributes.put(Constants.NAME_ATTRIBUTE, "pointB");
         attributes.put(Constants.VALUE_ATTRIBUTE, "pointB pathBB");
-        store.AddNode(XmlNode.Path, attributes);
+        store.AddNode(XmlNode.PATH, attributes);
 
 
         assertThat(store.getPoints().length, is(2));

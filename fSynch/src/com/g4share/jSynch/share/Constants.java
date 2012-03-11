@@ -15,6 +15,8 @@ public final class Constants {
     public static final String SECONDS_ATTRIBUTE = "seconds";
     public static final String NAME_ATTRIBUTE = "name";
     public static final String VALUE_ATTRIBUTE = "value";
+    public static final String LOG_LEVEL_ATTRIBUTE = "level";
+
 
     public enum Codes {
         FATAL_ERROR_CODE(-1),

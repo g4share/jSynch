@@ -27,13 +27,14 @@ public class FileFSHelper implements PointStoreHelper{
 
     @Override
     public String[] getFolders(String relativePath) {
-        File[] listOfFiles = load(relativePath);
-        if (listOfFiles == null || listOfFiles.length == 0) return null;
+        File[] listOfFolders = load(relativePath);
+        if (listOfFolders == null || listOfFolders.length == 0) return null;
 
         Set<String> folders = new HashSet<>();
-        for (File listOfFile : listOfFiles) {
-            if (listOfFile.isDirectory()) {
-                folders.add(listOfFile.getName());
+        for (File folder : listOfFolders) {
+            if (folder.isDirectory()) {
+                String relativeName = combine(Constants.JAVA_PATH_DELIMITER + "", relativePath, folder.getName());
+                folders.add(relativeName);
             }
         }
 
@@ -48,9 +49,10 @@ public class FileFSHelper implements PointStoreHelper{
         if (listOfFiles == null || listOfFiles.length == 0) return null;
 
         Set<String> files = new HashSet<>();
-        for (File listOfFile : listOfFiles) {
-            if (listOfFile.isFile()) {
-                files.add(listOfFile.getName());
+        for (File file : listOfFiles) {
+            if (file.isFile()) {
+                String relativeName = combine(Constants.JAVA_PATH_DELIMITER + "", relativePath, file.getName());
+                files.add(relativeName);
             }
         }
 

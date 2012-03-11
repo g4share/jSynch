@@ -171,10 +171,10 @@ public class FileFSHelperTest {
         assertThat(files.length, is(2));
         assertThat(folders, nullValue());
         
-        boolean found = CommonTestMethods.arrayContainsItem(files, "rootFile1");
+        boolean found = CommonTestMethods.arrayContainsItem(files, "/rootFile1");
         assertThat(found, is(true));
 
-        found = CommonTestMethods.arrayContainsItem(files, "rootFile2");
+        found = CommonTestMethods.arrayContainsItem(files, "/rootFile2");
         assertThat(found, is(true));
     }
 
@@ -184,15 +184,15 @@ public class FileFSHelperTest {
         CommonTestMethods.createFile(tPathName + "/2levelFolder/2levelFile");
 
         String[] folders = storeHelper.getFolders("");
-        String[] files = storeHelper.getFiles("2levelFolder");
+        String[] files = storeHelper.getFiles("/2levelFolder");
 
         assertThat(files.length, is(1));
         assertThat(folders.length, is(1));
 
-        boolean found = CommonTestMethods.arrayContainsItem(files, "2levelFile");
+        boolean found = CommonTestMethods.arrayContainsItem(files, "/2levelFolder/2levelFile");
         assertThat(found, is(true));
 
-        found = CommonTestMethods.arrayContainsItem(folders, "2levelFolder");
+        found = CommonTestMethods.arrayContainsItem(folders, "/2levelFolder");
         assertThat(found, is(true));
     }
 

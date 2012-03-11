@@ -1,5 +1,6 @@
 package com.g4share.jSynch.config;
 
+import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.share.Constants;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
@@ -38,7 +39,7 @@ public class XmlFileReader implements XmlReader{
         //open file
         File confFile = new File(configFileName);
         if(!confFile.exists()){
-            store.ErrorOccurred("config file \"" + configFileName + "\" does not exists.");
+            store.EventOccurred(LogLevel.FATAL, "config file \"" + configFileName + "\" does not exists.");
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 
@@ -48,7 +49,7 @@ public class XmlFileReader implements XmlReader{
         try {
             saxParser = factory.newSAXParser();
         } catch (ParserConfigurationException | SAXException ex) {
-            store.ErrorOccurred("config cannot be opened.");
+            store.EventOccurred(LogLevel.FATAL, "config cannot be opened.");
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 
@@ -56,7 +57,7 @@ public class XmlFileReader implements XmlReader{
         //sax handler definition
         DefaultHandler handler = new DefaultHandler() {
             //store current xml node
-            private EnumSet<XmlNode> currentPath = EnumSet.of(XmlNode.none);
+            private EnumSet<XmlNode> currentPath = EnumSet.of(XmlNode.NONE);
 
             @Override
             public void startElement(String uri, String localName, String qName,
@@ -64,7 +65,7 @@ public class XmlFileReader implements XmlReader{
 
                 //parse qname as XmlNode
                 XmlNode node = XmlNode.fromString(qName);
-                if (node == XmlNode.none) return;
+                if (node == XmlNode.NONE) return;
 
                 //if node is defined
                 if (node.isPathKey(currentPath)){
@@ -89,7 +90,7 @@ public class XmlFileReader implements XmlReader{
             public void endElement(String uri, String localName,
                                    String qName) throws SAXException {
                 XmlNode node = XmlNode.fromString(qName);
-                if (node == XmlNode.none) return;
+                if (node == XmlNode.NONE) return;
 
                 //change current xml node back
                 currentPath.remove(node);
@@ -102,7 +103,7 @@ public class XmlFileReader implements XmlReader{
         try {
             saxParser.parse(configFileName, handler);
         } catch (SAXException | IOException ex) {
-            store.ErrorOccurred("error read config: possible wrong format.");
+            store.EventOccurred(LogLevel.FATAL, "error read config: possible wrong format.");
             return Constants.Codes.FATAL_ERROR_CODE;
         }
 

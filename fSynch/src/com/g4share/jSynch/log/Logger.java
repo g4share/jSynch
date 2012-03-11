@@ -5,8 +5,6 @@ package com.g4share.jSynch.log;
  * Date: 3/3/12
  */
 public interface Logger {
-    void logEvent(String message);
-
-    void logError(String exception);
-    void logFatal(String exception);
+    void logEvent(LogLevel level, String message);
+    void setLevel(LogLevel level);
 }

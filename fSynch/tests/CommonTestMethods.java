@@ -32,6 +32,7 @@ public class CommonTestMethods {
             writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
             writer.println("<root>");
             writer.println("    <interval seconds = \"*\"/>");
+            writer.println("    <log level = \"LL\"/>");
             writer.println("    <SynchronisedPaths>");
             writer.println("        <path name = \"sh1\" value = \"/synch1/\"/>");
             writer.println("        <path name = \"sh1_\" value = \"/synch2/\"/>");

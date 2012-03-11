@@ -15,6 +15,8 @@ import java.util.Date;
  * Date: 3/3/12
  */
 public class FileLogger implements Logger {
+    private LogLevel currentLevel;
+
     private LoggerProperties fileProperties;
     private Logger innerLogger;
 
@@ -24,33 +26,33 @@ public class FileLogger implements Logger {
         this.fileProperties = fileProperties;
         this.innerLogger = innerLogger;
 
-        if (innerLogger != null) innerLogger.logEvent(this.fileProperties.getFileName());
-    }
-
-
-    @Override
-    public void logEvent(String message) {
-        printMessage("  ", message);
+        if (innerLogger != null) innerLogger.logEvent(LogLevel.TRACE, this.fileProperties.getFileName());
     }
 
     @Override
-    public void logError(String exception) {
-        printMessage("* ", exception);
+    public void setLevel(LogLevel level) {
+        this.currentLevel = level;
     }
 
     @Override
-    public void logFatal(String exception) {
-        printMessage("! ", "Fatal error: " + exception);
+    public void logEvent(LogLevel level, String message) {
+        if (currentLevel == null || level == null) return;
+
+        if (level.isHighest(currentLevel)){
+            printMessage(level.getDescription()
+                    + " "
+                    + new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss.SSS ").format(new Date())
+                    + " "
+                    + message);
+        }
     }
 
-    private void printMessage(String errType, String message){
+    private void printMessage(String message){
         try (PrintWriter writer = new PrintWriter(new FileWriter(fileProperties.getFileName(), true))) {
-            writer.print(errType);
-            writer.print(new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss.SSS ").format(new Date()));
             writer.println(message);
 
         } catch (IOException e){
-            if (innerLogger != null) innerLogger.logFatal("error loggind message.");
+            if (innerLogger != null) innerLogger.logEvent(LogLevel.FATAL, "error logging message.");
         }
     }
 }

@@ -1,9 +1,9 @@
 package com.g4share.jSynch.config;
 
+import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.share.PointInfo;
 
 import java.util.Map;
-import java.util.Set;
 
 /**
  * User: gm
@@ -11,8 +11,9 @@ import java.util.Set;
  */
 public interface ConfigStore {
     void AddNode(XmlNode node, Map<String, String> attributes);
-    void ErrorOccurred(String hint);
+    void EventOccurred(LogLevel level, String hint);
 
     int getInterval();
     PointInfo[] getPoints();
+    LogLevel getLogLevel();
 }

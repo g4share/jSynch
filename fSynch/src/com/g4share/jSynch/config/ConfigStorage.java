@@ -1,5 +1,6 @@
 package com.g4share.jSynch.config;
 
+import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.share.Constants;
 import com.g4share.jSynch.share.PointInfo;
@@ -15,7 +16,8 @@ import java.util.*;
 public class ConfigStorage implements ConfigStore {
     private Set<PointInfo> points;
     private int interval;
-
+    private LogLevel logLevel = LogLevel.getDefaultLevel();
+    
     private Logger logger;
 
     @Inject
@@ -25,9 +27,9 @@ public class ConfigStorage implements ConfigStore {
     }
 
     @Override
-    public void ErrorOccurred(String hint) {
+    public void EventOccurred(LogLevel level, String hint) {
         if (logger != null) {
-            logger.logFatal(hint);
+            logger.logEvent(level, hint);
         }
     }
 
@@ -41,17 +43,27 @@ public class ConfigStorage implements ConfigStore {
         return points.toArray(new PointInfo[points.size()]);
     }
 
+    @Override
+    public LogLevel getLogLevel() {
+        return logLevel;
+    }
 
     @Override
     public void AddNode(XmlNode node, Map<String, String> attributes) {
         switch(node){
-            case Interval:
+            case INTERVAL:
                 String intervalRaw = GetValue(attributes, Constants.SECONDS_ATTRIBUTE);
                 interval = tryParse(intervalRaw);
                 break;
-            case Path:
+            case PATH:
                 addNewPath(GetValue(attributes, Constants.NAME_ATTRIBUTE),
                         GetValue(attributes, Constants.VALUE_ATTRIBUTE));
+                break;
+            case LOG:
+                String logLevelRaw = GetValue(attributes, Constants.LOG_LEVEL_ATTRIBUTE);
+                LogLevel tempLevel = LogLevel.fromString(logLevelRaw);
+                if (tempLevel != LogLevel.NONE) logLevel = tempLevel;
+                break;
         }
     }
 
@@ -59,14 +71,14 @@ public class ConfigStorage implements ConfigStore {
         try {
             return Integer.parseInt(value);
         } catch (NumberFormatException ex) {
-            ErrorOccurred("Wrong interval: " + value);
+            EventOccurred(LogLevel.FATAL, "Wrong interval: " + value);
             return Constants.WRONG_NUMBER;
         }
     }
 
     private String GetValue(Map<String, String> map, String key) {
         if (map == null) {
-            ErrorOccurred("Error: Empty keys map.");
+            EventOccurred(LogLevel.FATAL, "Error: Empty keys map.");
             return null;
         }
 

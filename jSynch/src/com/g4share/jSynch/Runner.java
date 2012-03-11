@@ -1,16 +1,11 @@
 package com.g4share.jSynch;
 
 import com.g4share.jSynch.config.ConfigStore;
-import com.g4share.jSynch.config.XmlReader;
-import com.g4share.jSynch.guice.*;
-import com.g4share.jSynch.log.FileLoggerProperties;
+import com.g4share.jSynch.guice.GuiceBinderFactory;
+import com.g4share.jSynch.guice.PointStoreHelperFactory;
+import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
-import com.g4share.jSynch.log.LoggerProperties;
 import com.g4share.jSynch.share.*;
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-import com.google.inject.Key;
-import com.google.inject.assistedinject.FactoryModuleBuilder;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -18,6 +13,8 @@ import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.security.CodeSource;
 import java.security.ProtectionDomain;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * User: gm
@@ -27,36 +24,32 @@ import java.security.ProtectionDomain;
 public class Runner {
     public static void main(String[] args){
         String currentPath = getJarLocation();
-
-        Injector injector = Guice.createInjector(new BindModule());
-        Logger defaultLogger = injector.getInstance(Key.get(Logger.class, DefaultLogger.class));
-        defaultLogger.logEvent(currentPath);
+        GuiceBinderFactory binderFactory = new GuiceBinderFactory(currentPath);
+        Logger defaultLogger = binderFactory.getDefaultLogger();
 
         if (currentPath == null){
-            defaultLogger.logFatal("Could not get current path.");
+            defaultLogger.logEvent(LogLevel.TRACE, "Could not get current path.");
             System.exit(1);
         }
 
-        LoggerPropertiesFactory loggerPropertiesFactory = injector.getInstance(LoggerPropertiesFactory.class);
-        LoggerFactory loggerFactory = injector.getInstance(LoggerFactory.class);
-        Logger fileLogger = loggerFactory.create(loggerPropertiesFactory.create(currentPath + "/log"));
+        Logger fileLogger = binderFactory.getLogger();
 
-        SynchManagerFactory synchManagerFactory = injector.getInstance(SynchManagerFactory.class);
-        SynchManager synchManager = synchManagerFactory.create(fileLogger);
+        final SynchManager synchManager = binderFactory.getSynchManager();
 
-        ConfigStoreFactory  configStoreFactory = injector.getInstance(ConfigStoreFactory.class);
-        ConfigStore configStore = configStoreFactory.create(fileLogger);
-
-        XmlReaderFactory readerFactory = injector.getInstance(XmlReaderFactory.class) ;
-        XmlReader xmlReader = readerFactory.create(configStore);
-        Constants.Codes configReadCode = xmlReader.read(currentPath + "/config.xml");
-        if (configReadCode != Constants.Codes.SUCCESS_CODE){
-            fileLogger.logFatal("Could not read configuration. Exit.");
+        final ConfigStore configStore = binderFactory.readConfigStore();
+        if (configStore == null){
+            fileLogger.logEvent(LogLevel.TRACE, "Could not read configuration. Exit.");
             System.exit(1);
         }
 
-        PointStoreHelperFactory pointStoreHelperFactory = injector.getInstance(PointStoreHelperFactory.class);
-        Synch(pointStoreHelperFactory, synchManager, configStore.getPoints());
+        final PointStoreHelperFactory pointStoreHelperFactory = binderFactory.getPointStoreHelperFactory();
+
+        new Timer(false).schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Synch(pointStoreHelperFactory, synchManager, configStore.getPoints());
+            }}, 0, configStore.getInterval());
+
     }
 
     private static void Synch(PointStoreHelperFactory pointStoreHelperFactory,
@@ -98,7 +91,10 @@ public class Runner {
             }
         }
 
-        for(SynchFile innerFile : synchFolder.getFiles()) {
+        SynchFile[] innerFiles = synchFolder.getFiles();
+        if (innerFiles == null) return;
+
+        for(SynchFile innerFile : innerFiles) {
             switch(synchManager.checkFile(pointStoreTo, innerFile)){
                 case FATAL_ERROR_CODE :
                     return;
@@ -108,6 +104,7 @@ public class Runner {
             }
         }
     }
+
     private static String getJarLocation() {
         final ProtectionDomain domain;
         final CodeSource source;

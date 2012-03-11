@@ -58,7 +58,9 @@ public class SynchManagerTest {
 
     }
         
-    private void setFolder(PointStoreHelper pointStoreFrom, PointStoreHelper pointStoreTo, SynchFolder synchFolder) {
+    private void setFolder(PointStoreHelper pointStoreFrom,
+                           PointStoreHelper pointStoreTo,
+                           SynchFolder synchFolder) {
         Constants.Codes result = synchManager.setFolder(pointStoreTo, synchFolder.getRelativePath());
 
         //if folder could not be created, no synchronization for this path

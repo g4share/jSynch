@@ -2,26 +2,21 @@ import com.g4share.jSynch.config.ConfigStore;
 import com.g4share.jSynch.config.XmlFileReader;
 import com.g4share.jSynch.config.XmlNode;
 import com.g4share.jSynch.config.XmlReader;
-import com.g4share.jSynch.log.LoggerProperties;
+import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.share.Constants;
 import com.g4share.jSynch.share.PointInfo;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.internal.matchers.StringContains;
 import org.junit.rules.TemporaryFolder;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Map;
+import java.util.TreeMap;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsNull.notNullValue;
 import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
 
@@ -35,6 +30,8 @@ public class XmlFileReaderTest {
 
     private Map<String, String> points;
     private String intervalRaw;
+    private String logLevelRaw;
+    
     private String error;
 
     @Rule
@@ -52,19 +49,24 @@ public class XmlFileReaderTest {
             @Override
             public void AddNode(XmlNode node, Map<String, String> attributes) {
                 switch(node){
-                    case Interval:
+                    case INTERVAL:
                         intervalRaw = CommonTestMethods.GetValue(attributes, Constants.SECONDS_ATTRIBUTE);
                         break;
-                    case Path:
+                    case PATH:
                         points.put(CommonTestMethods.GetValue(attributes, Constants.NAME_ATTRIBUTE),
                                 CommonTestMethods.GetValue(attributes, Constants.VALUE_ATTRIBUTE));
+                        break;
+                    case LOG:
+                        logLevelRaw = CommonTestMethods.GetValue(attributes, Constants.LOG_LEVEL_ATTRIBUTE);
+                        break;
+
                 }
 
                 error = null;
             }
 
             @Override
-            public void ErrorOccurred(String hint) {
+            public void EventOccurred(LogLevel level, String hint) {
                 error = hint;
             }
 
@@ -76,6 +78,11 @@ public class XmlFileReaderTest {
             @Override
             public PointInfo[] getPoints() {
                 throw new NotImplementedException();
+            }
+
+            @Override
+            public LogLevel getLogLevel() {
+                return LogLevel.TRACE;
             }
         });
     }
@@ -110,6 +117,7 @@ public class XmlFileReaderTest {
         assertThat(result, is(Constants.Codes.SUCCESS_CODE));
 
         assertThat(intervalRaw, is("*"));
+        assertThat(logLevelRaw, is("LL"));
         assertThat(points.size(), is(4));
 
         assertThat(points.get("sh1"), is("/synch1/"));

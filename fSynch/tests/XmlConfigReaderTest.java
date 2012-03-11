@@ -1,8 +1,8 @@
 import com.g4share.jSynch.config.*;
+import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.share.ConfigInfo;
 import com.g4share.jSynch.share.Constants;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,20 +28,20 @@ public class XmlConfigReaderTest {
     @Before
     public void setUp() throws Exception {
         logger = new Logger() {
+            LogLevel level;
             @Override
-            public void logEvent(String message) {}
-
-            @Override
-            public void logError(String exception) {
-                errorMessage = exception;
+            public void logEvent(LogLevel level, String message) {
+                if (level == LogLevel.FATAL) { fatalMessage = message; }
+                if (level == LogLevel.ERROR) { errorMessage = message; }
             }
 
             @Override
-            public void logFatal(String exception) {
-                fatalMessage = exception;
-            }};
+            public void setLevel(LogLevel level) {
+                this.level = level;
+            }
+        };
 
-        fatalMessage = null;
+        fatalMessage = errorMessage = null;
     }
 
     @Test
@@ -49,7 +49,7 @@ public class XmlConfigReaderTest {
         TestXmlReader testXmlReader = new TestXmlReader() {
             @Override
             public Constants.Codes read(String path) {
-                configStore.AddNode(XmlNode.none, null);
+                configStore.AddNode(XmlNode.NONE, null);
                 return Constants.Codes.ERROR_CODE;
             }
         };
@@ -74,8 +74,8 @@ public class XmlConfigReaderTest {
                 attributes.put(Constants.NAME_ATTRIBUTE, "pointA");
                 attributes.put(Constants.VALUE_ATTRIBUTE, "pointA pathA");
 
-                configStore.AddNode(XmlNode.Interval, attributes);
-                configStore.AddNode(XmlNode.Path, attributes);
+                configStore.AddNode(XmlNode.INTERVAL, attributes);
+                configStore.AddNode(XmlNode.PATH, attributes);
 
                 return Constants.Codes.SUCCESS_CODE;
             }
@@ -101,17 +101,17 @@ public class XmlConfigReaderTest {
                 Map<String, String> attributes = new HashMap<>();
 
                 attributes.put(Constants.SECONDS_ATTRIBUTE, Integer.toString(rnd));
-                configStore.AddNode(XmlNode.Interval, attributes);
+                configStore.AddNode(XmlNode.INTERVAL, attributes);
 
                 attributes.clear();
                 attributes.put(Constants.NAME_ATTRIBUTE, "pointA");
                 attributes.put(Constants.VALUE_ATTRIBUTE, "pointA pathA");
-                configStore.AddNode(XmlNode.Path, attributes);
+                configStore.AddNode(XmlNode.PATH, attributes);
 
                 attributes.clear();
                 attributes.put(Constants.NAME_ATTRIBUTE, "pointA");
                 attributes.put(Constants.VALUE_ATTRIBUTE, "pointA pathAA");
-                configStore.AddNode(XmlNode.Path, attributes);
+                configStore.AddNode(XmlNode.PATH, attributes);
 
                 return Constants.Codes.SUCCESS_CODE;
             }

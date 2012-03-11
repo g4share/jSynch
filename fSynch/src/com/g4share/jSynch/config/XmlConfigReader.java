@@ -1,5 +1,6 @@
 package com.g4share.jSynch.config;
 
+import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.share.ConfigInfo;
 import com.g4share.jSynch.share.Constants;
@@ -34,22 +35,15 @@ public class XmlConfigReader implements ConfigReader {
 
         switch (interval){
             case 0:
-                if (logger != null) {
-                    logger.logFatal("Please specify interval (seconds).");
-                }
+                logEvent(LogLevel.FATAL, "Please specify interval (seconds).");
                 return null;
             case Constants.WRONG_NUMBER:
-                if (logger != null) {
-                    logger.logFatal("Incorect interval value.");
-                }
+                logEvent(LogLevel.FATAL, "Incorrect interval value.");
                 return null;
         }
 
         if (points.length == 0) {
-            if (logger != null) {
-                logger.logFatal("There are no points to be synchronized.");
-            }
-
+            logEvent(LogLevel.FATAL, "There are no points to be synchronized.");
             return null;
         }
 
@@ -57,18 +51,14 @@ public class XmlConfigReader implements ConfigReader {
         Set<PointInfo> pointInfo = new HashSet<>();
         for(PointInfo info : points){
             if (info == null || info.getStorePaths().length < 2){
-                if (logger != null) {
-                    logger.logError("Point \"" + info.getName() +  "\" removed. It should be at least 2 points to be synchronized.");
-                }
+                logEvent(LogLevel.ERROR, "Point \"" + info.getName() +  "\" removed. It should be at least 2 points to be synchronized.");
                 continue;
             }
             pointInfo.add(info);
         }
 
         if (pointInfo.isEmpty()) {
-            if (logger != null) {
-                logger.logFatal("There are no points to be synchronized.");
-            }
+            logEvent(LogLevel.FATAL, "There are no points to be synchronized.");
             return null;
         }
 
@@ -80,5 +70,10 @@ public class XmlConfigReader implements ConfigReader {
 
         points = null;
         return config;
+    }
+
+    private void logEvent(LogLevel level, String message){
+        if (logger == null) return;
+        logger.logEvent(level, message);
     }
 }
