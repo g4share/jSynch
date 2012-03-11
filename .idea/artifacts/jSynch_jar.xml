@@ -1,27 +1,22 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="jSynch:jar">
+  <artifact type="jar" build-on-make="true" name="jSynch:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/jSynch_jar</output-path>
     <root id="archive" name="jSynch.jar">
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/jSynch/src/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/jSynch/META-INF/MANIFEST.MF" />
       </element>
-      <element id="module-output" name="jSynch" />
       <element id="module-output" name="fSynch" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-multibindings-3.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-struts2-plugin-3.0.jar" path-in-jar="/" />
+      <element id="module-output" name="jSynch" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/javax.inject.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-grapher-3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/aopalliance.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-throwingproviders-3.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-jmx-3.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/aopalliance.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-assistedinject-3.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-spring-3.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-grapher-3.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-persist-3.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/junit-4.10.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-jndi-3.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/hamcrest-all-1.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/javax.inject.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-servlet-3.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-multibindings-3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/guice-3.0/guice-persist-3.0.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

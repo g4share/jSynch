@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <interval seconds = "10"/>
-	<log level = "TRACE"/>
+    <interval seconds = "30"/>
+	<log level = "INFO"/>
 	
 	<!--linux version-->
 <!--

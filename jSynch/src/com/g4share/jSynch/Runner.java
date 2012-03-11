@@ -32,7 +32,7 @@ public class Runner {
             System.exit(1);
         }
 
-        Logger fileLogger = binderFactory.getLogger();
+        final Logger fileLogger = binderFactory.getLogger();
 
         final SynchManager synchManager = binderFactory.getSynchManager();
 
@@ -47,19 +47,26 @@ public class Runner {
         new Timer(false).schedule(new TimerTask() {
             @Override
             public void run() {
-                Synch(pointStoreHelperFactory, synchManager, configStore.getPoints());
+                Synch(pointStoreHelperFactory,
+                        synchManager,
+                        configStore.getPoints(),
+                        fileLogger);
             }}, 0, configStore.getInterval());
 
     }
 
     private static void Synch(PointStoreHelperFactory pointStoreHelperFactory,
                               SynchManager synchManager,
-                              PointInfo[] configs) {
+                              PointInfo[] configs,
+                              Logger logger) {
 
         for (PointInfo config : configs) {
+            logger.logEvent(LogLevel.INFO, config.getName());
             for (final String pathFrom : config.getStorePaths()){
                 for (final String pathTo : config.getStorePaths()){
                     if (pathFrom.equals(pathTo)) continue; // do not synch the same folder in the point
+
+                    logger.logEvent(LogLevel.INFO, "          " + pathFrom + " => " + pathTo);
 
                     PointStoreHelper pointStoreFrom = pointStoreHelperFactory.create(pathFrom);
                     PointStoreHelper pointStoreTo = pointStoreHelperFactory.create(pathTo);
@@ -122,9 +129,8 @@ public class Runner {
         }
 
         String jarPath = uri.getPath();
-        return "/E:/gitStore/jSynch/config";
+        //return "/E:/gitStore/jSynch/config";
 
-
-        //return jarPath.substring(0, jarPath.lastIndexOf(Constants.JAVA_PATH_DELIMITER));
+        return jarPath.substring(0, jarPath.lastIndexOf(Constants.JAVA_PATH_DELIMITER));
     }
 }

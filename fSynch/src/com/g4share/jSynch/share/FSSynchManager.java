@@ -111,7 +111,7 @@ public class FSSynchManager implements SynchManager {
 
         long localSize = pointHelper.getSize(synchFile.getName());
         if (localSize != synchFile.getSize()){
-            logEvent(LogLevel.FATAL, "conflict for \"" + synchFile.getSize()
+            logEvent(LogLevel.FATAL, "conflict for \"" + synchFile.getName()
                     + "\" file (" + synchFile.getSize() + " - > " + localSize + ").");
         }
 
@@ -121,6 +121,10 @@ public class FSSynchManager implements SynchManager {
 
     public void setFile(PointStoreHelper pointHelper, SynchFile synchFile, FileChannel source) {
         if (checkFile(pointHelper, synchFile) != Constants.Codes.ERROR_CODE){
+            return;
+        }
+        if (source == null){
+            logEvent(LogLevel.ERROR, "Could not read from " + synchFile.getName() + "file.");
             return;
         }
         boolean synchronised = pointHelper.writeChannel(source, synchFile.getName());

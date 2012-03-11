@@ -1,15 +1,11 @@
 import com.g4share.jSynch.share.*;
-import org.hamcrest.core.IsNull;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
-import javax.management.monitor.StringMonitor;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.nio.channels.FileChannel;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -27,8 +23,21 @@ import static org.hamcrest.core.IsNull.nullValue;
 public class SynchManagerTest {
     SynchManager synchManager;
 
+    String tPathName;
+
+    @Rule
+    public TemporaryFolder folder = new TemporaryFolder();
+
+    @Before
+    public void setUp() throws Exception {
+        tPathName = folder.getRoot().getAbsolutePath();
+    }
+
+
     @Test
     public void testSetUnexistentFolder() throws Exception {
+        CommonTestMethods.createFile(tPathName + "/file");
+
         synchManager = new FSSynchManager(null);
 
         MemoryStoryHelper pointStoreA = new MemoryStoryHelper("A");
@@ -76,7 +85,10 @@ public class SynchManagerTest {
             }
         }
 
-        for(SynchFile innerFile : synchFolder.getFiles()) {
+        SynchFile[] innerFiles = synchFolder.getFiles();
+        if (innerFiles == null) return;
+
+        for(SynchFile innerFile : innerFiles) {
             switch(synchManager.checkFile(pointStoreTo, innerFile)){
                 case FATAL_ERROR_CODE :
                     return;
@@ -211,9 +223,12 @@ public class SynchManagerTest {
 
         @Override
         public FileChannel getReadChannel(String pathRead) {
-            return null;
+            try {
+                return new FileInputStream(tPathName + "/file").getChannel();
+            } catch (FileNotFoundException e) {
+                return null;
+            }
         }
-
         @Override
         public boolean writeChannel(FileChannel source, String writePath) {
             fsItems.put(writePath, false);

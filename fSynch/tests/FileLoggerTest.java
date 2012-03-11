@@ -85,4 +85,49 @@ public class FileLoggerTest {
         assertThat(line, startsWith("! "));
         assertThat(line, endsWith(text));
     }
+
+    @Test
+    public void logDisabledLevel() throws Exception{
+        String text = "it happens...";
+
+        Logger logger = new FileLogger(properties, null);
+        logger.setLevel(LogLevel.FATAL);
+        logger.logEvent(LogLevel.TRACE, text);
+
+        File logFile = new File(properties.getFileName());
+        assertThat(logFile.exists(), is(false));
+    }
+
+    @Test
+    public void logSameLevel() throws Exception{
+        String text = "it happens...";
+
+        Logger logger = new FileLogger(properties, null);
+        logger.setLevel(LogLevel.FATAL);
+        logger.logEvent(LogLevel.FATAL, text);
+
+        File logFile = new File(properties.getFileName());
+        assertThat(logFile.exists(), is(true));
+
+        String line = CommonTestMethods.getLine(properties.getFileName(), 0);
+        assertThat(line, startsWith("! "));
+        assertThat(line, endsWith(text));
+    }
+
+    @Test
+    public void logEnabledLevel() throws Exception{
+        String text = "it happens...";
+
+        Logger logger = new FileLogger(properties, null);
+        logger.setLevel(LogLevel.INFO);
+        logger.logEvent(LogLevel.FATAL, text);
+
+        File logFile = new File(properties.getFileName());
+        assertThat(logFile.exists(), is(true));
+
+        String line = CommonTestMethods.getLine(properties.getFileName(), 0);
+        assertThat(line, startsWith("! "));
+        assertThat(line, endsWith(text));
+    }
+
 }
