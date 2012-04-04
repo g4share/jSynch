@@ -6,7 +6,7 @@ to run it, the config file (config.xml) should be prezent in the same folder as 
 program support command line parameters
 
         Use java -jar jSynch.jar [-h ][-level TRACE|INFO|ERROR|FATAL|NONE]
-			-h                                        : show this help;
+            -h                                        : show this help;
             -level TRACE|INFO|ERROR|FATAL|NONE        : set the LogLevel to the specified one;
         This LogLevel is overridden by the config value (if any).
         Config.xml file should be located in the same folder as the jSynch.jar file.

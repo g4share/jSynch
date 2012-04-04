@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/fSynch/fSynch.iml" filepath="$PROJECT_DIR$/fSynch/fSynch.iml" />
       <module fileurl="file://$PROJECT_DIR$/jSynch/jSynch.iml" filepath="$PROJECT_DIR$/jSynch/jSynch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wSynch/wSynch.iml" filepath="$PROJECT_DIR$/wSynch/wSynch.iml" />
     </modules>
   </component>
 </project>

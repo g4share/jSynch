@@ -1,0 +1,16 @@
+#login{
+    width:500px;
+}
+
+#login .register{
+    position:absolute;
+    float:left;
+    margin:0;
+    line-height:30px;
+    top:-40px;
+    right:0;
+    font-size:11px;
+}
+
+#login .forgot{text-align:right;font-size:11px;}
+#login .back{padding:1em 0;border-top:1px solid #eee;text-align:right;font-size:11px;}
