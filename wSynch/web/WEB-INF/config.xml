@@ -3,8 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="ConfigService" class="com.g4share.wSynch.mvc.service.ConfigLoader">
-        <constructor-arg name="configFileName" value="/media/gmShared/gitStore/jSynch/config/config.xml"/>
-        <constructor-arg name="loggerFileName" value="/media/gmShared/gitStore/jSynch/config/log"/>
+    <bean id="paramsStorage" class="com.g4share.wSynch.mvc.service.ParamsStorage">
+        <property name="configFileName" value="/media/gmShared/gitStore/jSynch/config/config.xml"/>
+        <property name="loggerFileName" value="/media/gmShared/gitStore/jSynch/config/log"/>
     </bean>
 </beans>

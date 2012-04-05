@@ -3,6 +3,9 @@ package com.g4share.jSynch.log;
 import com.g4share.jSynch.guice.DefaultLogger;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,6 +17,7 @@ import java.util.Date;
  * User: gm
  * Date: 3/3/12
  */
+@Service("fileLogger")
 public class FileLogger implements Logger {
     private LogLevel currentLevel;
 
@@ -21,8 +25,9 @@ public class FileLogger implements Logger {
     private Logger innerLogger;
 
     @Inject
-    public FileLogger(@Assisted LoggerProperties fileProperties,
-                      @DefaultLogger Logger innerLogger) {
+    @Autowired
+    public FileLogger( @Qualifier("fileProperties") @Assisted LoggerProperties fileProperties,
+                       @Qualifier("defaultLogger") @DefaultLogger Logger innerLogger) {
         this.fileProperties = fileProperties;
         this.innerLogger = innerLogger;
 

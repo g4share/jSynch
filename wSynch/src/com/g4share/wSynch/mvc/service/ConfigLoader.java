@@ -1,36 +1,28 @@
 package com.g4share.wSynch.mvc.service;
 
-import com.g4share.jSynch.config.*;
-import com.g4share.jSynch.log.*;
+import com.g4share.jSynch.config.ConfigReader;
 import com.g4share.jSynch.share.ConfigInfo;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
-@Configuration
+@Service("ConfigService")
 public class ConfigLoader implements ConfigService {
-    Logger logger;
-
+    ParamsStorage storage;
     ConfigReader cReader;
-    XmlReader xmlReader;
-    ConfigStore cStore;
 
-    private String configFileName;
+    @Autowired
+    public ConfigLoader(@Qualifier("paramsStorage") ParamsStorage storage,
+                        @Qualifier("xmlConfigReader") ConfigReader configReader) {
 
-    public ConfigLoader() {}
-    public ConfigLoader(String loggerFileName, String configFileName) {
-        logger = new FileLogger(new FileLoggerProperties(loggerFileName),
-                new ConsoleLogger());
+        this.storage = storage;
 
-        cStore = new ConfigStorage(logger);
-
-        xmlReader = new XmlFileReader();
-        xmlReader.setStore(cStore);
-        cReader = new XmlConfigReader(logger, xmlReader);
-        this.configFileName = configFileName;
+        cReader = configReader;
     }
 
     @Override
     public ConfigInfo getConfigInfo() {
-        ConfigInfo cInfo = cReader.read(configFileName);
+        ConfigInfo cInfo = cReader.read(storage.getConfigFileName());
         return cInfo;
     }
 }

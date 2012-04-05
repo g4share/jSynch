@@ -1,9 +1,12 @@
 package com.g4share.jSynch.log;
 
+import org.springframework.stereotype.Service;
+
 /**
  * User: gm
  * Date: 3/3/12
  */
+@Service("defaultLogger")
 public class ConsoleLogger implements Logger {
     private LogLevel currentLevel;
 

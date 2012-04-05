@@ -6,6 +6,9 @@ import com.g4share.jSynch.share.ConfigInfo;
 import com.g4share.jSynch.share.Constants;
 import com.g4share.jSynch.share.PointInfo;
 import com.google.inject.assistedinject.Assisted;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 import java.util.*;
@@ -14,13 +17,15 @@ import java.util.*;
  * User: gm
  * Date: 3/3/12
  */
+@Service("xmlConfigReader")
 public class XmlConfigReader implements ConfigReader {
     private Logger logger;
     private XmlReader xmlReader;
 
     @Inject
-    public XmlConfigReader(@Assisted Logger logger,
-                           XmlReader xmlReader){
+    @Autowired
+    public XmlConfigReader(@Qualifier("fileLogger") @Assisted Logger logger,
+                           @Qualifier("xmlReader") XmlReader xmlReader){
         this.logger = logger;
         this.xmlReader = xmlReader;
     }

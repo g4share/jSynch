@@ -4,6 +4,9 @@ import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.share.Constants;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -20,12 +23,15 @@ import java.util.HashMap;
  * User: gm
  * Date: 3/3/12
  */
+@Service("xmlReader")
 public class XmlFileReader implements XmlReader{
     private ConfigStore store;
 
-    @Override
+
     @Inject
-    public void setStore(@Assisted ConfigStore configStore){
+    @Autowired
+    @Override
+    public void setStore(@Qualifier("configStore") @Assisted ConfigStore configStore){
         this.store = configStore;
     }
 

@@ -7,14 +7,16 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ImportResource(value = {"/WEB-INF/beans.xml"})
+@ImportResource(value = {"/WEB-INF/config.xml"})
 
 @ComponentScan(basePackages =   {
                                     "com.g4share.wSynch.mvc.handler",           /*handlers*/
                                     "com.g4share.wSynch.mvc.controller",
                                     "com.g4share.wSynch.mvc.controller.user",   /*controllers*/
 
-                                    "com.g4share.wSynch.mvc.service"            /*beans*/
+                                    "com.g4share.jSynch.log",                   /*beans*/
+                                    "com.g4share.jSynch.config",
+                                    "com.g4share.jSynch.config"
                                 })
 @Import(ConfigLoader.class)
 public class MvcConfig {
@@ -25,4 +27,5 @@ public class MvcConfig {
         resolver.setSuffix(".jsp");
         return resolver;
     }
+
 }

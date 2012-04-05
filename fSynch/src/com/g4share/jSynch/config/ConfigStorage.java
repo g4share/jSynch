@@ -6,6 +6,9 @@ import com.g4share.jSynch.share.Constants;
 import com.g4share.jSynch.share.PointInfo;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
@@ -13,6 +16,8 @@ import java.util.*;
  * User: gm
  * Date: 3/3/12
  */
+
+@Service("configStore")
 public class ConfigStorage implements ConfigStore {
     private Set<PointInfo> points;
     private int interval;
@@ -21,7 +26,8 @@ public class ConfigStorage implements ConfigStore {
     private Logger logger;
 
     @Inject
-    public ConfigStorage(@Assisted Logger logger){
+    @Autowired
+    public ConfigStorage(@Qualifier("fileLogger") @Assisted Logger logger){
         this.logger = logger;
         this.points = new HashSet<>();
     }
