@@ -1,9 +1,5 @@
 package com.g4share.jSynch.share;
 
-import com.g4share.jSynch.share.Constants;
-import com.g4share.jSynch.share.PointStoreHelper;
-import com.g4share.jSynch.share.SynchFolder;
-
 import java.nio.channels.FileChannel;
 
 /**

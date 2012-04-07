@@ -16,7 +16,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
                                     "com.g4share.jSynch.log",                   /*beans*/
                                     "com.g4share.jSynch.config",
-                                    "com.g4share.jSynch.config"
+                                    "com.g4share.jSynch.share"
                                 })
 @Import(ConfigLoader.class)
 public class MvcConfig {

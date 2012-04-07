@@ -40,7 +40,6 @@ public class FSSynchManager implements SynchManager {
 
             for(int i = 0; i < folders.length; i++) {
                 //and load folder info
-                //synchFolders[i] = getFolder(pointHelper, pointHelper.combine(relativePath,  folders[i]));
                 synchFolders[i] = getFolder(pointHelper, folders[i]);
             }
         }

@@ -1,6 +1,7 @@
 package com.g4share.wSynch.mvc.controller.user;
 
 
+import com.g4share.wSynch.mvc.model.ConfigHash;
 import com.g4share.wSynch.mvc.service.ConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -26,7 +27,10 @@ public class Home {
     public String getConfig(ModelMap model, Principal principal ) {
         String userName = "gm";//principal.getName();
         model.addAttribute("userName", userName);
-        model.addAttribute("config", loader.getConfigInfo());
+
+        ConfigHash cHash = loader.getConfigHash();
+        model.addAttribute("config", cHash);
+
         return "home";
     }
 }

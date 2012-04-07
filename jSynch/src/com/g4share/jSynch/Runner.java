@@ -23,6 +23,7 @@ import java.util.TimerTask;
  */
 public class Runner {
     public static void main(String[] args){
+
         String currentPath = getJarLocation();
         GuiceBinderFactory binderFactory = new GuiceBinderFactory(currentPath);
         Logger defaultLogger = binderFactory.getDefaultLogger();
@@ -32,7 +33,27 @@ public class Runner {
             System.exit(1);
         }
 
+        //check command line options
+        CmdOptions options = CmdOptions.parse(args);
+        String error = options.getParseError();
+        if (error != null) {
+            defaultLogger.logEvent(LogLevel.CRITICAL, error );
+        }
+
+        //override LogLevel
+        if (options.getLogLevel() != LogLevel.NONE) defaultLogger.setLevel(options.getLogLevel());
+
+        if (options.showHint()) {
+            defaultLogger.logEvent(LogLevel.CRITICAL, CmdOptions.getHint());
+        }
+        if (error != null || options.showHint()) {
+            System.exit(1);
+        }
+
+
         final Logger fileLogger = binderFactory.getLogger();
+        //override LogLevel
+        if (options.getLogLevel() != LogLevel.NONE) fileLogger.setLevel(options.getLogLevel());
 
         final SynchManager synchManager = binderFactory.getSynchManager();
 
@@ -111,6 +132,8 @@ public class Runner {
             }
         }
     }
+
+
 
     private static String getJarLocation() {
         final ProtectionDomain domain;

@@ -12,10 +12,12 @@ import java.util.Set;
  * User: gm
  * Date: 3/5/12
  */
+//@Service("pointStoreHelper")
 public class FileFSHelper implements PointStoreHelper{
     private String path;
 
     @Inject
+    //@Autowired
     public FileFSHelper(@Assisted String path) {
         this.path = path;
     }

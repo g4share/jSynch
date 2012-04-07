@@ -9,8 +9,9 @@ import com.g4share.jSynch.log.LogLevel;
 public final class CmdOptions {
     private String parseError;
     
-    private LogLevel logLevel = LogLevel.getDefaultLevel();
+    private LogLevel logLevel = LogLevel.NONE;
     private boolean h;
+    private boolean status;
 
     private CmdOptions() {}
 
@@ -20,6 +21,10 @@ public final class CmdOptions {
 
     public boolean showHint() {
         return h;
+    }
+
+    public boolean showStatus() {
+        return status;
     }
 
     public static CmdOptions parse(String[] args){
@@ -32,6 +37,14 @@ public final class CmdOptions {
                         options.parseError = "\"-h\" should be the only parameter.\n";
                     }
                     options.h = true;
+                    return options;
+                case "-stat" :
+                    if (args.length > 1){
+                        options.parseError = "\"-stat\" should be the only parameter.\n";
+                        options.h = true;
+                        return options;
+                    }
+                    options.status = true;
                     return options;
                 case "-level" :
                     if (args.length < ++i + 1){
@@ -62,10 +75,11 @@ public final class CmdOptions {
     }
 
     public static String getHint(){
-        return "Use java -jar jSynch.jar [-h ][-level TRACE|INFO|ERROR|FATAL|NONE]\n" +
+        return "Use java -jar jSynch.jar [-h ][-stat ][-level TRACE|INFO|ERROR|FATAL|NONE]\n" +
                "    -h                                        : show this help;\n" +
+               "    -stat                                     : get status info;\n" +
                "    -level TRACE|INFO|ERROR|FATAL|NONE        : set the LogLevel to the specified one;\n" +
-               "This LogLevel is overridden by the config value (if any).\n" +
+               "This LogLevel overrides the config value (if any).\n" +
                "Config.xml file should be located in the same folder as the jSynch.jar file.\n" +
                 "   Thank you for choosing us.";
     }
