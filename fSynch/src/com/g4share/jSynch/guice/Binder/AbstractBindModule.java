@@ -1,42 +1,24 @@
-package com.g4share.jSynch.guice;
+package com.g4share.jSynch.guice.Binder;
 
-import com.g4share.jSynch.config.ConfigStorage;
-import com.g4share.jSynch.config.ConfigStore;
-import com.g4share.jSynch.config.XmlFileReader;
-import com.g4share.jSynch.config.XmlReader;
-import com.g4share.jSynch.log.*;
+import com.g4share.jSynch.config.*;
+import com.g4share.jSynch.guice.Factory.*;
 import com.g4share.jSynch.share.FSSynchManager;
 import com.g4share.jSynch.share.FileFSHelper;
 import com.g4share.jSynch.share.PointStoreHelper;
 import com.g4share.jSynch.share.SynchManager;
 import com.google.inject.AbstractModule;
-import com.google.inject.Scopes;
 import com.google.inject.assistedinject.FactoryModuleBuilder;
 
 /**
  * User: gm
- * Date: 3/3/12
+ * Date: 4/7/12
  */
-public class BindModule  extends AbstractModule {
+public class AbstractBindModule extends AbstractModule {
     @Override
     protected void configure() {
-        bind(Logger.class)
-                .annotatedWith(DefaultLogger.class)
-                .to(ConsoleLogger.class)
-                .in(Scopes.SINGLETON);
-
-        install(new FactoryModuleBuilder()
-                .implement(LoggerProperties.class, FileLoggerProperties.class)
-                .build(LoggerPropertiesFactory.class));
-
-        install(new FactoryModuleBuilder()
-                .implement(Logger.class, FileLogger.class)
-                .build(LoggerFactory.class));
-
         install(new FactoryModuleBuilder()
                 .implement(SynchManager.class, FSSynchManager.class)
                 .build(SynchManagerFactory.class));
-
 
         install(new FactoryModuleBuilder()
                 .implement(ConfigStore.class, ConfigStorage.class)
@@ -47,9 +29,12 @@ public class BindModule  extends AbstractModule {
                 .build(XmlReaderFactory.class));
 
         install(new FactoryModuleBuilder()
+                .implement(ConfigReader.class, XmlConfigReader.class)
+                .build(ConfigReaderFactory.class));
+
+        install(new FactoryModuleBuilder()
                 .implement(PointStoreHelper.class, FileFSHelper.class)
                 .build(PointStoreHelperFactory.class));
 
     }
 }
-

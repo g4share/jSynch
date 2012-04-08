@@ -1,5 +1,6 @@
 package com.g4share.jSynch;
 
+import com.g4share.jSynch.guice.BinderEnvironment;
 import com.g4share.jSynch.log.LogLevel;
 
 /**
@@ -10,6 +11,8 @@ public final class CmdOptions {
     private String parseError;
     
     private LogLevel logLevel = LogLevel.NONE;
+    private BinderEnvironment environment = BinderEnvironment.getDefault();
+
     private boolean h;
     private boolean status;
 
@@ -25,6 +28,10 @@ public final class CmdOptions {
 
     public boolean showStatus() {
         return status;
+    }
+
+    public BinderEnvironment getEnvironment() {
+        return environment;
     }
 
     public static CmdOptions parse(String[] args){
@@ -59,6 +66,21 @@ public final class CmdOptions {
                         return options;
                     }
                     break;
+                case "-env" :
+                    if (args.length < ++i + 1){
+                        options.parseError = "Please specify environment value.\n";
+                        options.h = true;
+                        return options;
+                    }
+                    options.environment = BinderEnvironment.fromString(args[i]);
+                    if  (options.environment == null) {
+                        options.environment = BinderEnvironment.getDefault();
+                        options.parseError = "Incorrect value for environment. Please specify a valid one.\n";
+                        options.h = true;
+                        return options;
+                    }
+                    break;
+
                 default:
                     options.parseError = "The \"" + args[i] + "\" key is not recognized.\n";
                     options.h = true;
@@ -75,9 +97,12 @@ public final class CmdOptions {
     }
 
     public static String getHint(){
-        return "Use java -jar jSynch.jar [-h ][-stat ][-level TRACE|INFO|ERROR|FATAL|NONE]\n" +
+        return "Use java -jar jSynch.jar [-h ][-stat] \n" +
+               "                         [-level TRACE|INFO|ERROR|FATAL|CRITICAL|NONE]\n" +
+               "                         [-env PRODUCTION|DEVELOPMENT\n" +
                "    -h                                        : show this help;\n" +
                "    -stat                                     : get status info;\n" +
+               "    -env                                      : set the environmen;\n" +
                "    -level TRACE|INFO|ERROR|FATAL|NONE        : set the LogLevel to the specified one;\n" +
                "This LogLevel overrides the config value (if any).\n" +
                "Config.xml file should be located in the same folder as the jSynch.jar file.\n" +

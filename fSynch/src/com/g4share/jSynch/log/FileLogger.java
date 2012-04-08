@@ -1,6 +1,6 @@
 package com.g4share.jSynch.log;
 
-import com.g4share.jSynch.guice.DefaultLogger;
+import com.g4share.jSynch.guice.annotations.DefaultLogger;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
 import org.springframework.beans.factory.annotation.Autowired;

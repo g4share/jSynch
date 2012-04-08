@@ -5,12 +5,13 @@ package com.g4share.jSynch.log;
  * Date: 3/11/12
  */
 public enum LogLevel {
-    CRITICAL (-1, " "),
+    NONE (4, ""),
+    CRITICAL (-1, "$"),
     FATAL(0, "!"),
     ERROR(1, "*"),
     INFO (3, " "),
-    TRACE(3, "-"),
-    NONE (4, " ");
+    TRACE(3, "?");
+
 
     private int code;
     private String description;

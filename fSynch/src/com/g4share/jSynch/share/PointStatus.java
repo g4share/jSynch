@@ -30,3 +30,4 @@ public enum PointStatus {
         return description;
     }
 }
+

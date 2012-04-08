@@ -6,71 +6,35 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef8bff70-26c4-4b36-8ade-47cea0722970" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/ConfigHash.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/PathHash.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/PointHash.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ant.xml" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jSynch_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jSynch_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="ef8bff70-26c4-4b36-8ade-47cea0722970" name="Default" comment="added &quot;view hash&quot; functionality to web page">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Binder/BinderHelperModule.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Binder/DevelopmentBindModule.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Binder/ProductionBindModule.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/BinderEnvironment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/BinderHelperFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/ConfigReaderFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceDevelopmentBinderHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceProductionBinderHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/annotations/DevelopmentEnvironment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/annotations/ProductionEnvironment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Worker.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/BindModule.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Binder/AbstractBindModule.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/ConfigStoreFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/ConfigStoreFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/DefaultLogger.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/annotations/DefaultLogger.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceBinderFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceBinderFactoryHelper.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/LoggerFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/LoggerFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/LoggerPropertiesFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/LoggerPropertiesFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/PointStoreHelperFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/PointStoreHelperFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/SynchManagerFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/SynchManagerFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/XmlReaderFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/XmlReaderFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/fSynch.iml" afterPath="$PROJECT_DIR$/fSynch/fSynch.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigReader.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStorage.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStorage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStore.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStore.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlFileReader.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlFileReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlNode.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlReader.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/BindModule.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/BindModule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/ConfigStoreFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/ConfigStoreFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/DefaultLogger.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/DefaultLogger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceBinderFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceBinderFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/LoggerFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/LoggerFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/LoggerPropertiesFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/LoggerPropertiesFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/PointStoreHelperFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/PointStoreHelperFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/SynchManagerFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/SynchManagerFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/XmlReaderFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/XmlReaderFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/ConsoleLogger.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/ConsoleLogger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/FileLogger.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/FileLogger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/FileLoggerProperties.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/FileLoggerProperties.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/LogLevel.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/LogLevel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/Logger.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/Logger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/LoggerProperties.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/LoggerProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/ConfigInfo.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/ConfigInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/Constants.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FSSynchManager.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FSSynchManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointInfo.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStoreHelper.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStoreHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchFile.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchFolder.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchFolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchManager.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/CommonTestMethods.java" afterPath="$PROJECT_DIR$/fSynch/tests/CommonTestMethods.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java" afterPath="$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java" afterPath="$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/FileLoggerTest.java" afterPath="$PROJECT_DIR$/fSynch/tests/FileLoggerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/SynchManagerTest.java" afterPath="$PROJECT_DIR$/fSynch/tests/SynchManagerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/XmlConfigReaderTest.java" afterPath="$PROJECT_DIR$/fSynch/tests/XmlConfigReaderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java" afterPath="$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jSynch/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/jSynch/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jSynch/jSynch.iml" afterPath="$PROJECT_DIR$/jSynch/jSynch.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStatus.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStatus.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/CmdOptions.java" afterPath="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/CmdOptions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Runner.java" afterPath="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Runner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/configuration/MvcConfig.java" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/configuration/MvcConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/controller/user/Home.java" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/controller/user/Home.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigLoader.java" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigService.java" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wSynch/web/WEB-INF/view/home.jsp" afterPath="$PROJECT_DIR$/wSynch/web/WEB-INF/view/home.jsp" />
     </list>
     <ignored path="jSynch.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,15 +59,15 @@
     <SUITE FILE_PATH="coverage/jSynch$FileFSHelperTest_testPathCombine.ic" NAME="FileFSHelperTest.testPathCombine Coverage Results" MODIFIED="1331064935463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$FileLoggerTest.ic" NAME="FileLoggerTest Coverage Results" MODIFIED="1331500055134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$XmlConfigReaderTest.ic" NAME="XmlConfigReaderTest Coverage Results" MODIFIED="1331500046925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/jSynch$XmlFileReaderTest_and_5_more.ic" NAME="XmlFileReaderTest and 5 more Coverage Results" MODIFIED="1331595759416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/jSynch$SynchManagerTest_testGetItems.ic" NAME="SynchManagerTest.testGetItems Coverage Results" MODIFIED="1331147339579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/jSynch$XmlFileReaderTest_and_5_more.ic" NAME="XmlFileReaderTest and 5 more Coverage Results" MODIFIED="1333837524548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$Runner.ic" NAME="Runner Coverage Results" MODIFIED="1331595771849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.g4share.jSynch.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/jSynch$SynchManagerTest_testGetItems.ic" NAME="SynchManagerTest.testGetItems Coverage Results" MODIFIED="1331147339579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$FileLoggerTest_logSameLevel.ic" NAME="FileLoggerTest.logSameLevel Coverage Results" MODIFIED="1331499464696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$ConfigStorageTest_and_3_more.ic" NAME="ConfigStorageTest and 3 more Coverage Results" MODIFIED="1330977700390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$FileLoggerTest_logDisabledLevel.ic" NAME="FileLoggerTest.logDisabledLevel Coverage Results" MODIFIED="1331499420593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/jSynch$All_in_fSynch.ic" NAME="All in fSynch Coverage Results" MODIFIED="1333744012865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/jSynch$All_in_fSynch.ic" NAME="All in fSynch Coverage Results" MODIFIED="1333819624839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/jSynch$ConfigStorageTest_and_4_more.ic" NAME="ConfigStorageTest and 4 more Coverage Results" MODIFIED="1331075547903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageOptionsProvider">
@@ -134,7 +98,128 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java" line="70" class="com.g4share.jSynch.config.XmlConfigReader" package="com.g4share.jSynch.config">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java" line="34" class="com.g4share.jSynch.config.XmlConfigReader" package="com.g4share.jSynch.config">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigLoader.java" line="26" class="com.g4share.wSynch.mvc.service.ConfigLoader" package="com.g4share.wSynch.mvc.service">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java" line="37" class="com.g4share.jSynch.config.XmlConfigReader" package="com.g4share.jSynch.config">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigLoader.java" line="20" class="com.g4share.wSynch.mvc.service.ConfigLoader" package="com.g4share.wSynch.mvc.service">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java" line="29" class="com.g4share.jSynch.config.XmlConfigReader" package="com.g4share.jSynch.config">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java" line="106" class="com.g4share.jSynch.guice.GuiceAbstractBinderHelper" package="com.g4share.jSynch.guice">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Runner.java" line="55" class="com.g4share.jSynch.Runner" package="com.g4share.jSynch">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
+    <method_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java" line="59" class="com.g4share.jSynch.guice.GuiceAbstractBinderHelper" package="com.g4share.jSynch.guice">
+        <option name="WATCH_ENTRY" value="true" />
+        <option name="WATCH_EXIT" value="true" />
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </method_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -175,91 +260,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PointStatus.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStatus.java">
+      <file leaf-file-name="GuiceAbstractBinderHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="30" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
+            <state line="96" column="17" selection-start="2852" selection-end="2852" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#getDefaultLogger#0;class#GuiceAbstractBinderHelper#0" expanded="false" />
+                <element signature="method#getSynchManager#0;class#GuiceAbstractBinderHelper#0" expanded="false" />
+                <element signature="method#getXmlReader#0;class#GuiceAbstractBinderHelper#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PointStoreHelperFactory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/PointStoreHelperFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="13" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.jsp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wSynch/web/WEB-INF/view/home.jsp">
+      <file leaf-file-name="PointStoreHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStoreHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="47" selection-start="177" selection-end="177" vertical-scroll-proportion="0.19626169">
+            <state line="8" column="17" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigStore.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStore.java">
+      <file leaf-file-name="ProductionEnvironment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/annotations/ProductionEnvironment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="2" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0">
+            <state line="17" column="18" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PointHash.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/PointHash.java">
+      <file leaf-file-name="ProductionBindModule.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Binder/ProductionBindModule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="53" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
+            <state line="13" column="13" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PathHash.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/PathHash.java">
+      <file leaf-file-name="GuiceDevelopmentBinderHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceDevelopmentBinderHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="11" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0">
+            <state line="12" column="56" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigLoader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigLoader.java">
+      <file leaf-file-name="GuiceProductionBinderHelper.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceProductionBinderHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="40" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.0">
+            <state line="72" column="66" selection-start="2570" selection-end="2570" vertical-scroll-proportion="1.2276708">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/controller/user/Home.java">
+      <file leaf-file-name="ConfigStorageTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="36" selection-start="987" selection-end="995" vertical-scroll-proportion="0.0">
+            <state line="150" column="8" selection-start="4787" selection-end="4787" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileFSHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java">
+      <file leaf-file-name="Runner.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="11" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
+            <state line="61" column="84" selection-start="2092" selection-end="2092" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PointInfo.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointInfo.java">
+      <file leaf-file-name="Worker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Worker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="13" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfigHash.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/ConfigHash.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="14" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0">
+            <state line="39" column="53" selection-start="1171" selection-end="1194" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -279,22 +368,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/wSynch/web/WEB-INF/view/login.jsp" />
-        <option value="$PROJECT_DIR$/wSynch/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/LogLevel.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceDevelopmentBinderHelper.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Binder/BinderModuleFactory.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/BinderFactory.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/BinderEnvironment.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/BinderHelperFactory.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceBinderFactoryHelper.java" />
         <option value="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/CmdOptions.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Binder/BinderHelperModule.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/XmlConfigReaderFactory.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Binder/AbstractBindModule.java" />
         <option value="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Runner.java" />
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FSSynchManager.java" />
-        <option value="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/configuration/MvcConfig.java" />
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java" />
-        <option value="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/PathHash.java" />
-        <option value="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigService.java" />
-        <option value="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/controller/user/Home.java" />
-        <option value="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/ConfigHash.java" />
-        <option value="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigLoader.java" />
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStatus.java" />
-        <option value="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/PointHash.java" />
-        <option value="$PROJECT_DIR$/wSynch/web/WEB-INF/view/home.jsp" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/ConfigReaderFactory.java" />
+        <option value="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Worker.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceProductionBinderHelper.java" />
       </list>
     </option>
   </component>
@@ -306,10 +395,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
     <option name="y" value="-5" />
-    <option name="width" value="1682" />
-    <option name="height" value="1056" />
+    <option name="width" value="1680" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -339,104 +427,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jSynch" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Tests">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="fSynch">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="fSynch">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="tests">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="All">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="runner">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="runner">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="runner">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="runner">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="jSynch">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="fSynch">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="fSynch">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -506,6 +496,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statusCode" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -768,6 +784,208 @@
               <option name="myItemId" value="jSynch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="guice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="guice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Factory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="guice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Binder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="guice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="annotations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jSynch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Tests">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="fSynch">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="fSynch">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="tests">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="All">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="runner">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="runner">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="runner">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="runner">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="jSynch">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="fSynch">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="fSynch">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -776,17 +994,17 @@
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="158" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="OverrideImplement.combined" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="175" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="163" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="180" />
@@ -803,22 +1021,28 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.g4share.jSynch.guice.Factory" />
+      <recent name="com.g4share.jSynch.guice" />
+      <recent name="com.g4share.jSynch.guice.annotations" />
       <recent name="" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -832,19 +1056,19 @@
       <recent name="$PROJECT_DIR$/wSynch/web/WEB-INF/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.index.jsp">
+  <component name="RunManager" selected="Application.Runner">
     <configuration default="false" name="SynchManagerTest.testGetItems" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="fSynch" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SynchManagerTest" />
       <option name="METHOD_NAME" value="testGetItems" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -860,14 +1084,14 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="fSynch" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SynchManagerTest" />
-      <option name="METHOD_NAME" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -883,14 +1107,14 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="fSynch" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="pattern" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -911,22 +1135,24 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Cover" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="false" name="All in fSynch" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="fSynch" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -956,43 +1182,27 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="index_jsp_jSynch" />
+        <option name="BASE_DIRECTORY_NAME" value="index_jsp_jSynch_2" />
       </server-settings>
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <RunnerSettings RunnerId="Cover" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="54321" />
+        <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="   " />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="   " />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="   " />
+          <option name="SCRIPT" value="" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value="" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="   " />
+          <option name="SCRIPT" value="" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
@@ -1001,13 +1211,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="   " />
+          <option name="SCRIPT" value="" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value="" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="   " />
+          <option name="SCRIPT" value="" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
@@ -1059,6 +1269,24 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1085,24 +1313,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -1179,6 +1389,29 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="false" name="Runner" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="com.g4share.jSynch.Runner" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-env DEVELOPMENT" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="jSynch" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="false" name="www" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -1251,13 +1484,14 @@
         </option>
       </method>
     </configuration>
-    <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.SynchManagerTest.testGetItems" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SynchManagerTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.XmlFileReaderTest and 5 more" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.All in fSynch" />
-      <item index="4" class="java.lang.String" itemvalue="Tomcat Server.index.jsp" />
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Application.Runner" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SynchManagerTest.testGetItems" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SynchManagerTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.XmlFileReaderTest and 5 more" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.All in fSynch" />
       <item index="5" class="java.lang.String" itemvalue="Tomcat Server.www" />
+      <item index="6" class="java.lang.String" itemvalue="Tomcat Server.index.jsp" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -1312,15 +1546,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-5" width="1682" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="-5" width="1680" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965687" sideWeight="0.53650445" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21349558" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4632184" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37721238" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1328,17 +1563,16 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32743362" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32964602" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31740198" sideWeight="0.670354" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2931416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965687" sideWeight="0.704646" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31556374" sideWeight="0.7068584" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2931416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965687" sideWeight="0.7068584" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33849558" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1402,88 +1636,118 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/tomcat/lib/catalina.jar!/org/apache/catalina/core/ApplicationDispatcher.class">
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/ConfigReaderFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="17" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.06888361" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/LogLevel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="30" selection-start="116" selection-end="116" vertical-scroll-proportion="0.12252042" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/ConfigInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="97" selection-end="158" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ParamsStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="49" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/ConsoleLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="30" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/PointHash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="53" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/PathHash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="11" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="40" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="11" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/ConfigHash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="14" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/controller/user/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="36" selection-start="987" selection-end="995" vertical-scroll-proportion="0.0">
+        <state line="11" column="58" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStore.java">
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="2" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0">
+        <state line="8" column="17" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="0" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wSynch/web/WEB-INF/view/home.jsp">
+    <entry file="jar://$PROJECT_DIR$/lib/guice-3.0/guice-3.0.jar!/com/google/inject/internal/ConstructorInjector.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="47" selection-start="177" selection-end="177" vertical-scroll-proportion="0.19626169">
+        <state line="17" column="21" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.50209206">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/guice-3.0/guice-3.0.jar!/com/google/inject/internal/DefaultConstructionProxyFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#554#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceBinderFactoryHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Binder/ProductionBindModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/annotations/ProductionEnvironment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="18" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStoreHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="17" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/PointStoreHelperFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="8" selection-start="4787" selection-end="4787" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Worker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="53" selection-start="1171" selection-end="1194" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="84" selection-start="2092" selection-end="2092" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="17" selection-start="2852" selection-end="2852" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#getDefaultLogger#0;class#GuiceAbstractBinderHelper#0" expanded="false" />
+            <element signature="method#getSynchManager#0;class#GuiceAbstractBinderHelper#0" expanded="false" />
+            <element signature="method#getXmlReader#0;class#GuiceAbstractBinderHelper#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceDevelopmentBinderHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="56" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceProductionBinderHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="66" selection-start="2570" selection-end="2570" vertical-scroll-proportion="1.2276708">
           <folding />
         </state>
       </provider>

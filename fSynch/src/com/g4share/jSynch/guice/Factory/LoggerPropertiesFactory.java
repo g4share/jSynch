@@ -1,6 +1,5 @@
-package com.g4share.jSynch.guice;
+package com.g4share.jSynch.guice.Factory;
 
-import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.LoggerProperties;
 
 /**

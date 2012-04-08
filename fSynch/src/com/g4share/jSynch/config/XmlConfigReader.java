@@ -25,7 +25,7 @@ public class XmlConfigReader implements ConfigReader {
     @Inject
     @Autowired
     public XmlConfigReader(@Qualifier("fileLogger") @Assisted Logger logger,
-                           @Qualifier("xmlReader") XmlReader xmlReader){
+                           @Qualifier("xmlReader") @Assisted XmlReader xmlReader){
         this.logger = logger;
         this.xmlReader = xmlReader;
     }
