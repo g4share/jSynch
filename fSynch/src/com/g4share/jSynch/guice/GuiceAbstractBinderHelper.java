@@ -115,8 +115,7 @@ public abstract class GuiceAbstractBinderHelper {
         ConfigInfo cInfo = cReader.read(currentPath + "/config.xml");
 
 
-        //TODO
-        //level = configStore.getLogLevel();
+        level = configStore.getLogLevel();
         if (defaultLogger == null) defaultLogger.setLevel(level);
         if (fileLogger == null) fileLogger.setLevel(level);
 

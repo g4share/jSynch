@@ -7,42 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef8bff70-26c4-4b36-8ade-47cea0722970" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/StatusInfoFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/StatusInfoLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/service/StatusInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/StoreHelperFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/Constants.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/service/Constants.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStatus.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/service/PointStatus.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointStoreHelper.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/service/PointStoreHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/SynchManager.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/service/SynchManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/ConfigHash.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/ConfigHash.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/PathHash.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PathHash.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/model/PointHash.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointHash.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigLoader.java" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/W3StatusInfoLoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigService.java" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/W3StatusInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStorage.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStorage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlFileReader.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlFileReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlReader.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Binder/AbstractBindModule.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Binder/AbstractBindModule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/PointStoreHelperFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/PointStoreHelperFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/SynchManagerFactory.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/Factory/SynchManagerFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceProductionBinderHelper.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceProductionBinderHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FSSynchManager.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FSSynchManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java" afterPath="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java" afterPath="$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java" afterPath="$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/SynchManagerTest.java" afterPath="$PROJECT_DIR$/fSynch/tests/SynchManagerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/XmlConfigReaderTest.java" afterPath="$PROJECT_DIR$/fSynch/tests/XmlConfigReaderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java" afterPath="$PROJECT_DIR$/fSynch/tests/XmlFileReaderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/CmdOptions.java" afterPath="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/CmdOptions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Runner.java" afterPath="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Runner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Worker.java" afterPath="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Worker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/configuration/MvcConfig.java" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/configuration/MvcConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/controller/user/Home.java" afterPath="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/controller/user/Home.java" />
     </list>
     <ignored path="jSynch.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -145,6 +111,19 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java" line="117" class="com.g4share.jSynch.guice.GuiceAbstractBinderHelper" package="com.g4share.jSynch.guice">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
@@ -186,6 +165,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="FileFSHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="11" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Home.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/controller/user/Home.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -195,85 +183,75 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XmlConfigReader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java">
+      <file leaf-file-name="W3StatusInfoLoader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/W3StatusInfoLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="22" selection-start="2503" selection-end="2503" vertical-scroll-proportion="0.0">
+            <state line="11" column="13" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/service/Constants.java">
+      <file leaf-file-name="W3StatusInfo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/W3StatusInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="23" selection-start="818" selection-end="818" vertical-scroll-proportion="0.0">
+            <state line="4" column="17" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigStorageTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java">
+      <file leaf-file-name="FileLogger.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/FileLogger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="19" selection-start="5010" selection-end="5010" vertical-scroll-proportion="0.0">
+            <state line="20" column="13" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileFSHelperTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java">
+      <file leaf-file-name="PointStoreHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/service/PointStoreHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="206" column="8" selection-start="6565" selection-end="6565" vertical-scroll-proportion="0.0">
+            <state line="8" column="33" selection-start="135" selection-end="151" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileFSHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="31" selection-start="2788" selection-end="2788" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GuiceAbstractBinderHelper.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GuiceAbstractBinderHelper.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="32" selection-start="3740" selection-end="3740" vertical-scroll-proportion="0.0">
+            <state line="113" column="46" selection-start="3506" selection-end="3506" vertical-scroll-proportion="0.42430705">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Worker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Worker.java">
+      <file leaf-file-name="StoreHelperFactory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/StoreHelperFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="21" selection-start="3777" selection-end="3777" vertical-scroll-proportion="0.0">
+            <state line="12" column="2" selection-start="332" selection-end="332" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="method#Synch#1;class#Worker#0" expanded="false" />
-                <element signature="method#setFolder#0;class#Worker#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SynchManagerTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fSynch/tests/SynchManagerTest.java">
+      <file leaf-file-name="ConfigStore.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="206" column="117" selection-start="7330" selection-end="7330" vertical-scroll-proportion="0.4087838">
+            <state line="17" column="13" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FSSynchManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FSSynchManager.java">
+      <file leaf-file-name="ConfigStorage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="26" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
+            <state line="28" column="15" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -293,8 +271,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceProductionBinderHelper.java" />
-        <option value="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Worker.java" />
         <option value="$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Runner.java" />
         <option value="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/ConfigLoader.java" />
         <option value="$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/StatusInfo.java" />
@@ -309,6 +285,8 @@
         <option value="$PROJECT_DIR$/fSynch/tests/ConfigStorageTest.java" />
         <option value="$PROJECT_DIR$/fSynch/tests/FileFSHelperTest.java" />
         <option value="$PROJECT_DIR$/fSynch/tests/SynchManagerTest.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java" />
+        <option value="$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java" />
       </list>
     </option>
   </component>
@@ -1012,7 +990,7 @@
       <recent name="$PROJECT_DIR$/wSynch/web/WEB-INF/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.XmlFileReaderTest and 5 more">
+  <component name="RunManager" selected="Application.Runner">
     <configuration default="false" name="SynchManagerTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="fSynch" />
@@ -1500,10 +1478,14 @@
       <created>1333843551305</created>
       <updated>1333843551305</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added -stat option to desktop (shows information from config)&#10;added -home option to desktop &#10;and refactoring to make this possible.. a lot of it.&#10;">
+      <created>1333890705690</created>
+      <updated>1333890705690</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="3">
+  <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -1525,7 +1507,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1680" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965687" sideWeight="0.53650445" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1539,14 +1521,14 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31556374" sideWeight="0.20575221" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42920354" sideWeight="0.49264705" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42920354" sideWeight="0.49264705" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31556374" sideWeight="0.20575221" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31066176" sideWeight="0.7068584" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2931416" sideWeight="0.49019608" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31066176" sideWeight="0.5707965" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2931416" sideWeight="0.49019608" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965687" sideWeight="0.7068584" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1591,7 +1573,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added -stat option to desktop (shows information from config)&#10;added -home option to desktop &#10;and refactoring to make this possible.. a lot of it.&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some &quot;TODO&quot;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1607,6 +1589,7 @@
     <MESSAGE value="added &quot;view hash&quot; functionality to web page" />
     <MESSAGE value="added &quot;-env&quot; feature to software (specify in runtime guice file loader. How? unbelievable ... With guice support )))" />
     <MESSAGE value="added -stat option to desktop (shows information from config)&#10;added -home option to desktop &#10;and refactoring to make this possible.. a lot of it.&#10;" />
+    <MESSAGE value="fixed some &quot;TODO&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1616,64 +1599,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/CmdOptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="0" selection-start="3383" selection-end="4433" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wSynch/web/WEB-INF/view/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="8.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/service/PointStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="18" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/StoreHelperFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="9" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/PointHash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="16" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FSSynchManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="26" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/controller/user/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="54" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/XmlConfigReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="22" selection-start="2503" selection-end="2503" vertical-scroll-proportion="0.0">
@@ -1702,20 +1627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="31" selection-start="2788" selection-end="2788" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="32" selection-start="3740" selection-end="3740" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jSynch/src/com/g4share/jSynch/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="101" column="21" selection-start="3777" selection-end="3777" vertical-scroll-proportion="0.0">
@@ -1728,7 +1639,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fSynch/tests/SynchManagerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="117" selection-start="7330" selection-end="7330" vertical-scroll-proportion="0.4087838">
+        <state line="206" column="117" selection-start="7330" selection-end="7330" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/service/PointStoreHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="33" selection-start="135" selection-end="151" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/log/FileLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/config/ConfigStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="15" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/controller/user/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="54" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/W3StatusInfoLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/share/FileFSHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="11" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/W3StatusInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="17" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wSynch/src/com/g4share/wSynch/mvc/service/StoreHelperFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="2" selection-start="332" selection-end="332" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fSynch/src/com/g4share/jSynch/guice/GuiceAbstractBinderHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="46" selection-start="3506" selection-end="3506" vertical-scroll-proportion="0.42430705">
           <folding />
         </state>
       </provider>
