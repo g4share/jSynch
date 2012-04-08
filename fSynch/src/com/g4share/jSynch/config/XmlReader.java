@@ -1,6 +1,6 @@
 package com.g4share.jSynch.config;
 
-import com.g4share.jSynch.share.Constants;
+import com.g4share.jSynch.share.service.Constants;
 
 /**
  * User: gm

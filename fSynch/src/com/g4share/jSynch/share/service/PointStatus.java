@@ -1,4 +1,4 @@
-package com.g4share.jSynch.share;
+package com.g4share.jSynch.share.service;
 
 public enum PointStatus {
     UNKNOWN (0, false, "Unknown"),

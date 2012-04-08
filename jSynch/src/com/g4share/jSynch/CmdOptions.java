@@ -15,6 +15,7 @@ public final class CmdOptions {
 
     private boolean h;
     private boolean status;
+    private String homeFolder;
 
     private CmdOptions() {}
 
@@ -46,13 +47,8 @@ public final class CmdOptions {
                     options.h = true;
                     return options;
                 case "-stat" :
-                    if (args.length > 1){
-                        options.parseError = "\"-stat\" should be the only parameter.\n";
-                        options.h = true;
-                        return options;
-                    }
                     options.status = true;
-                    return options;
+                    break;
                 case "-level" :
                     if (args.length < ++i + 1){
                         options.parseError = "Please specify LogLevel value.\n";
@@ -80,12 +76,18 @@ public final class CmdOptions {
                         return options;
                     }
                     break;
-
+                case "-home" :
+                    if (args.length < ++i + 1){
+                        options.parseError = "Please specify home folder.\n";
+                        options.h = true;
+                        return options;
+                    }
+                    options.homeFolder = args[i];
+                    break;
                 default:
                     options.parseError = "The \"" + args[i] + "\" key is not recognized.\n";
                     options.h = true;
                     return options;
-
             }
         }
 
@@ -96,13 +98,20 @@ public final class CmdOptions {
         return parseError;
     }
 
+    public String getHomeFolder() {
+        return homeFolder;
+    }
+
     public static String getHint(){
-        return "Use java -jar jSynch.jar [-h ][-stat] \n" +
+        return "Use java -jar jSynch.jar [-h ]\n" +
+               "                         [-stat]\n" +
+               "                         [-home {home folder}]\n" +
                "                         [-level TRACE|INFO|ERROR|FATAL|CRITICAL|NONE]\n" +
                "                         [-env PRODUCTION|DEVELOPMENT\n" +
                "    -h                                        : show this help;\n" +
                "    -stat                                     : get status info;\n" +
-               "    -env                                      : set the environmen;\n" +
+               "    -home                                     : home folder (location where config file is located);\n" +
+               "    -env                                      : set the environment;\n" +
                "    -level TRACE|INFO|ERROR|FATAL|NONE        : set the LogLevel to the specified one;\n" +
                "This LogLevel overrides the config value (if any).\n" +
                "Config.xml file should be located in the same folder as the jSynch.jar file.\n" +

@@ -1,4 +1,7 @@
-package com.g4share.jSynch.share;
+package com.g4share.jSynch.share.service;
+
+import com.g4share.jSynch.share.SynchFile;
+import com.g4share.jSynch.share.SynchFolder;
 
 import java.nio.channels.FileChannel;
 

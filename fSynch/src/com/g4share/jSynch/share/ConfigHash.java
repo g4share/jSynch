@@ -1,4 +1,4 @@
-package com.g4share.wSynch.mvc.model;
+package com.g4share.jSynch.share;
 
 public class ConfigHash {
     private int interval;

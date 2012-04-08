@@ -9,7 +9,8 @@ import com.g4share.jSynch.guice.Factory.*;
 import com.g4share.jSynch.guice.annotations.DefaultLogger;
 import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
-import com.g4share.jSynch.share.SynchManager;
+import com.g4share.jSynch.share.service.StatusInfo;
+import com.g4share.jSynch.share.service.SynchManager;
 import com.google.inject.Inject;
 import com.google.inject.Key;
 import com.google.inject.assistedinject.Assisted;
@@ -19,7 +20,6 @@ import com.google.inject.assistedinject.Assisted;
  * Date: 3/11/12
  */
 public class GuiceProductionBinderHelper extends GuiceAbstractBinderHelper {
-
     @Inject
     public GuiceProductionBinderHelper(@Assisted String currentPath) {
         super(currentPath);
@@ -66,6 +66,12 @@ public class GuiceProductionBinderHelper extends GuiceAbstractBinderHelper {
     protected ConfigReader getConfigReaderInternal() {
         ConfigReaderFactory readerFactory = injector.getInstance(ConfigReaderFactory.class) ;
         return readerFactory.create(getLogger(), getXmlReader());
+    }
+
+    @Override
+    protected StatusInfo getStatusInfoInternal() {
+        StatusInfoFactory statusInfoFactory = injector.getInstance(StatusInfoFactory.class);
+        return statusInfoFactory.create(getPointStoreHelperFactory());
     }
 
     @Override

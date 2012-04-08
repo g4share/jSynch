@@ -8,7 +8,8 @@ import com.g4share.jSynch.guice.Factory.PointStoreHelperFactory;
 import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.share.ConfigInfo;
-import com.g4share.jSynch.share.SynchManager;
+import com.g4share.jSynch.share.service.StatusInfo;
+import com.g4share.jSynch.share.service.SynchManager;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -25,6 +26,7 @@ public abstract class GuiceAbstractBinderHelper {
     private ConfigStore configStore;
     private XmlReader xmlReader;
     private ConfigReader configReader;
+    private StatusInfo statusInfo;
 
     private PointStoreHelperFactory pointStoreHelperFactory;
 
@@ -39,10 +41,9 @@ public abstract class GuiceAbstractBinderHelper {
     protected abstract ConfigStore getConfigStoreInternal();
     protected abstract XmlReader getXmlReaderInternal();
     protected abstract ConfigReader getConfigReaderInternal();
+    protected abstract StatusInfo getStatusInfoInternal();
 
     protected abstract PointStoreHelperFactory getPointStoreHelperFactoryInternal();
-
-
 
     public GuiceAbstractBinderHelper(String currentPath) {
         this.currentPath = currentPath;
@@ -101,13 +102,16 @@ public abstract class GuiceAbstractBinderHelper {
         return pointStoreHelperFactory;
     }
 
+    public final StatusInfo getStatusInfo() {
+        if (statusInfo == null) {
+            statusInfo = getStatusInfoInternal();
+        }
+        return statusInfo;
+    }
 
 
     public final ConfigInfo readConfigInfo(){
-        ConfigStore configStore = getConfigStore();
-        XmlReader xmlReader = getXmlReader();
-
-        ConfigReader cReader = getConfigReader();//(fileLogger, xmlReader);
+        ConfigReader cReader = getConfigReader();
         ConfigInfo cInfo = cReader.read(currentPath + "/config.xml");
 
 

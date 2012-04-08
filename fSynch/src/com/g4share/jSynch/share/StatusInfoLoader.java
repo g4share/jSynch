@@ -1,30 +1,27 @@
-package com.g4share.wSynch.mvc.service;
+package com.g4share.jSynch.share;
 
-import com.g4share.jSynch.config.ConfigReader;
-import com.g4share.jSynch.share.*;
-import com.g4share.wSynch.mvc.model.ConfigHash;
-import com.g4share.wSynch.mvc.model.PathHash;
-import com.g4share.wSynch.mvc.model.PointHash;
+import com.g4share.jSynch.guice.Factory.PointStoreHelperFactory;
+import com.g4share.jSynch.share.service.Constants;
+import com.g4share.jSynch.share.service.PointStoreHelper;
+import com.g4share.jSynch.share.service.StatusInfo;
+import com.google.inject.Inject;
+import com.google.inject.assistedinject.Assisted;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service("ConfigService")
-public class ConfigLoader implements ConfigService {
-    ParamsStorage storage;
-    ConfigReader cReader;
+@Service("statusInfoReader")
+public class StatusInfoLoader implements StatusInfo {
+    PointStoreHelperFactory pointStoreHelperFactory;
 
+    @Inject
     @Autowired
-    public ConfigLoader(@Qualifier("paramsStorage") ParamsStorage storage,
-                        @Qualifier("xmlConfigReader") ConfigReader configReader) {
-
-        this.storage = storage;
-        cReader = configReader;
+    public StatusInfoLoader(@Qualifier("PointStoreHelperFactory") @Assisted PointStoreHelperFactory pointStoreHelperFactory) {
+        this.pointStoreHelperFactory = pointStoreHelperFactory;
     }
 
     @Override
-    public ConfigHash getConfigHash() {
-        ConfigInfo cInfo = cReader.read(storage.getConfigFileName());
+    public ConfigHash getConfigHash(ConfigInfo cInfo) {
 
         PointInfo[] pointInfo = cInfo.getPointInfo();
         PointHash[] pointHash = new PointHash[pointInfo.length];
@@ -36,10 +33,8 @@ public class ConfigLoader implements ConfigService {
             for (int j = 0; j < pointPath.length; j++){
                 pathHash[j] = new PathHash(pointPath[j]);
 
-                //todo: use spring DI for loading
-                PointStoreHelper storeHelper = new FileFSHelper(pointPath[i]);
-
-                setPointHash(pathHash[j], storeHelper, "/");
+                PointStoreHelper storeHelper = pointStoreHelperFactory.create(pointPath[i]);
+                setPointHash(pathHash[j], storeHelper, Constants.JAVA_PATH_DELIMITER + "");
             }
 
 

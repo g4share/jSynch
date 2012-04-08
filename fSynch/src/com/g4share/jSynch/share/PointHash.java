@@ -1,6 +1,6 @@
-package com.g4share.wSynch.mvc.model;
+package com.g4share.jSynch.share;
 
-import com.g4share.jSynch.share.PointStatus;
+import com.g4share.jSynch.share.service.PointStatus;
 
 public class PointHash {
     private String name;

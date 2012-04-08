@@ -1,4 +1,7 @@
 import com.g4share.jSynch.share.*;
+import com.g4share.jSynch.share.service.Constants;
+import com.g4share.jSynch.share.service.PointStoreHelper;
+import com.g4share.jSynch.share.service.SynchManager;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -137,13 +140,13 @@ public class SynchManagerTest {
         @Override
         public boolean fileExists(String relativePath) {
             if (!fsItems.containsKey(relativePath)) return false;
-            return !fsItems.get(relativePath).booleanValue();
+            return !fsItems.get(relativePath);
         }
 
         @Override
         public boolean folderExists(String relativePath) {
             if (!fsItems.containsKey(relativePath)) return false;
-            return fsItems.get(relativePath).booleanValue();
+            return fsItems.get(relativePath);
         }
 
         @Override
@@ -157,7 +160,7 @@ public class SynchManagerTest {
                 }
                 if (!relativePath.equals(folderName)) continue;
 
-                if (!fsItems.get(key).booleanValue()){
+                if (!fsItems.get(key)){
                     files.add(key);
                 }
             }
@@ -173,7 +176,7 @@ public class SynchManagerTest {
                 if (!key.startsWith(relativePath)
                         || key.equals(relativePath)) continue;
 
-                if (fsItems.get(key).booleanValue()){
+                if (fsItems.get(key)){
                     files.add(key);
                 }
             }
@@ -201,7 +204,7 @@ public class SynchManagerTest {
                 if (paths[i].equals("")
                         || paths[i].equals(Constants.JAVA_PATH_DELIMITER + "")) continue;
 
-                String processedPath = paths[i].replace(Constants.WIN_PATH_DELIMITER, Constants.JAVA_PATH_DELIMITER);;
+                String processedPath = paths[i].replace(Constants.WIN_PATH_DELIMITER, Constants.JAVA_PATH_DELIMITER);
 
                 //delimiter should be added between
                 if (localPath.charAt(localPath.length() - 1) != Constants.JAVA_PATH_DELIMITER

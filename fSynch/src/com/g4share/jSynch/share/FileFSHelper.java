@@ -1,5 +1,7 @@
 package com.g4share.jSynch.share;
 
+import com.g4share.jSynch.share.service.Constants;
+import com.g4share.jSynch.share.service.PointStoreHelper;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
 
@@ -12,12 +14,10 @@ import java.util.Set;
  * User: gm
  * Date: 3/5/12
  */
-//@Service("pointStoreHelper")
-public class FileFSHelper implements PointStoreHelper{
+public class FileFSHelper implements PointStoreHelper {
     private String path;
 
     @Inject
-    //@Autowired
     public FileFSHelper(@Assisted String path) {
         this.path = path;
     }

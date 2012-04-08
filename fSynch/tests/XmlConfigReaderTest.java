@@ -2,7 +2,7 @@ import com.g4share.jSynch.config.*;
 import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.share.ConfigInfo;
-import com.g4share.jSynch.share.Constants;
+import com.g4share.jSynch.share.service.Constants;
 import org.junit.Before;
 import org.junit.Test;
 

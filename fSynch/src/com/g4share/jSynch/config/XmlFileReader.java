@@ -1,7 +1,7 @@
 package com.g4share.jSynch.config;
 
 import com.g4share.jSynch.log.LogLevel;
-import com.g4share.jSynch.share.Constants;
+import com.g4share.jSynch.share.service.Constants;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -6,8 +6,9 @@ import com.g4share.jSynch.guice.GuiceBinderFactoryHelper;
 import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.share.ConfigInfo;
-import com.g4share.jSynch.share.Constants;
-import com.g4share.jSynch.share.SynchManager;
+import com.g4share.jSynch.share.service.Constants;
+import com.g4share.jSynch.share.service.StatusInfo;
+import com.g4share.jSynch.share.service.SynchManager;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -27,7 +28,8 @@ public class Runner {
         String error = options.getParseError();
 
 
-        String currentPath = getJarLocation();
+        String currentPath = options.getHomeFolder() == null ? getJarLocation() : options.getHomeFolder();
+
         GuiceAbstractBinderHelper binderFactory = new GuiceBinderFactoryHelper(options.getEnvironment()).getBinderHelper(currentPath);
         Logger defaultLogger = binderFactory.getDefaultLogger();
 
@@ -62,6 +64,13 @@ public class Runner {
         final PointStoreHelperFactory pointStoreHelperFactory = binderFactory.getPointStoreHelperFactory();
 
         Worker worker = new Worker(pointStoreHelperFactory, synchManager, fileLogger);
+        if (options.showStatus())
+        {
+            StatusInfo statusLoader = binderFactory.getStatusInfo();
+            worker.showStatus(statusLoader.getConfigHash(cInfo));
+            return;
+        }
+
         worker.Synch(cInfo);
     }
 

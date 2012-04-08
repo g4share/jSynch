@@ -1,5 +1,5 @@
 import com.g4share.jSynch.share.FileFSHelper;
-import com.g4share.jSynch.share.PointStoreHelper;
+import com.g4share.jSynch.share.service.PointStoreHelper;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -204,13 +204,10 @@ public class FileFSHelperTest {
         CommonTestMethods.createFile(tPathName + "/" + fn);
         String contentFrom = CommonTestMethods.readFileAsString(tPathName + "/" + fn);
 
-        FileChannel source = null;
-        try{
-            source = storeHelper.getReadChannel("/" + fn);
-            storeHelper.writeChannel(source, "/folder/copy")  ;
-        }finally {
-            if (source != null) source.close();
+        try (FileChannel source = storeHelper.getReadChannel("/" + fn)) {
+            storeHelper.writeChannel(source, "/folder/copy");
         }
+
 
         String contentTo = CommonTestMethods.readFileAsString(tPathName + "/folder/copy");
         assertThat(contentTo, is(contentFrom));

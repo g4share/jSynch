@@ -1,8 +1,8 @@
 package com.g4share.wSynch.mvc.controller.user;
 
 
-import com.g4share.wSynch.mvc.model.ConfigHash;
-import com.g4share.wSynch.mvc.service.ConfigService;
+import com.g4share.jSynch.share.ConfigHash;
+import com.g4share.wSynch.mvc.service.W3StatusInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -16,10 +16,10 @@ import java.security.Principal;
 @Service
 @Controller
 public class Home {
-    private ConfigService loader;
+    private W3StatusInfo loader;
 
     @Autowired
-    public Home(@Qualifier("ConfigService") ConfigService loader) {
+    public Home(@Qualifier("W3StatusInfoLoaderService") W3StatusInfo loader) {
         this.loader = loader;
     }
 

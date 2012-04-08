@@ -2,7 +2,7 @@ package com.g4share.jSynch.config;
 
 import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
-import com.g4share.jSynch.share.Constants;
+import com.g4share.jSynch.share.service.Constants;
 import com.g4share.jSynch.share.PointInfo;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;

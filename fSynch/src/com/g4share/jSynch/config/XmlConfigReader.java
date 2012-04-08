@@ -3,7 +3,7 @@ package com.g4share.jSynch.config;
 import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.share.ConfigInfo;
-import com.g4share.jSynch.share.Constants;
+import com.g4share.jSynch.share.service.Constants;
 import com.g4share.jSynch.share.PointInfo;
 import com.google.inject.assistedinject.Assisted;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +34,8 @@ public class XmlConfigReader implements ConfigReader {
     public ConfigInfo read(String path){
         Constants.Codes result = xmlReader.read(path);
         if (result == null) return null;
+
+        if (result == Constants.Codes.FATAL_ERROR_CODE) return null;
 
         int interval = xmlReader.getStore().getInterval();
         PointInfo[] points = xmlReader.getStore().getPoints();

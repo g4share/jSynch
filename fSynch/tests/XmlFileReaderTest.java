@@ -3,7 +3,7 @@ import com.g4share.jSynch.config.XmlFileReader;
 import com.g4share.jSynch.config.XmlNode;
 import com.g4share.jSynch.config.XmlReader;
 import com.g4share.jSynch.log.LogLevel;
-import com.g4share.jSynch.share.Constants;
+import com.g4share.jSynch.share.service.Constants;
 import com.g4share.jSynch.share.PointInfo;
 import org.junit.Before;
 import org.junit.Rule;

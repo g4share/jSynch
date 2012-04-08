@@ -3,7 +3,7 @@ import com.g4share.jSynch.config.ConfigStore;
 import com.g4share.jSynch.config.XmlNode;
 import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
-import com.g4share.jSynch.share.Constants;
+import com.g4share.jSynch.share.service.Constants;
 import com.g4share.jSynch.share.PointInfo;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +30,7 @@ public class ConfigStorageTest {
 
             @Override
             public void setLevel(LogLevel level) {
-                this.level = level;;
+                this.level = level;
             }
 
             @Override

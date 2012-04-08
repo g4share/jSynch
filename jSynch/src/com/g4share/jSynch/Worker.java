@@ -4,6 +4,9 @@ import com.g4share.jSynch.guice.Factory.PointStoreHelperFactory;
 import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
 import com.g4share.jSynch.share.*;
+import com.g4share.jSynch.share.service.Constants;
+import com.g4share.jSynch.share.service.PointStoreHelper;
+import com.g4share.jSynch.share.service.SynchManager;
 
 import java.nio.channels.FileChannel;
 import java.util.Timer;
@@ -92,5 +95,23 @@ public class Worker {
                     synchManager.setFile(pointStoreTo, innerFile, source);
             }
         }
+    }
+
+
+    public void showStatus(ConfigHash cHash) {
+        StringBuffer message = new StringBuffer();
+        message.append("Interval: ").append(cHash.getInterval()).append("\n");
+
+        for(PointHash pointHash : cHash.getPointHash()){
+            message.append("Name: ").append(pointHash.getName()).append("  Status: ").append(pointHash.getStatus()).append("\n");
+            for(PathHash pathHash : pointHash.getPathHash()){
+                message.append("           ").append(pathHash.getPath()).append("  hash ")
+                        .append(pathHash.getFolders()).append(":")
+                        .append(pathHash.getFiles()).append(":")
+                        .append(pathHash.getSize()).append(":").append("\n");
+            }
+        }
+
+        logger.logEvent(LogLevel.CRITICAL, message.toString());
     }
 }

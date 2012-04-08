@@ -2,6 +2,9 @@ package com.g4share.jSynch.share;
 
 import com.g4share.jSynch.log.LogLevel;
 import com.g4share.jSynch.log.Logger;
+import com.g4share.jSynch.share.service.Constants;
+import com.g4share.jSynch.share.service.PointStoreHelper;
+import com.g4share.jSynch.share.service.SynchManager;
 import com.google.inject.assistedinject.Assisted;
 
 import javax.inject.Inject;
